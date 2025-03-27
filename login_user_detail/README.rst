@@ -1,33 +1,36 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--1-blue.svg
-    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
+    :target: https://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
 User Log Details
 ================
-
-This module developed to  record  login details of user.
-
-Installation
-============
-
-Just select it from available modules to install it, there is no need to extra installations.
+Record Login user details & IP Address.
 
 Configuration
 =============
-
-Nothing to configure.
+* No additional configurations needed.
 
 Company
 -------
 * `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
+License
+-------
+Affero General Public License, v3.0 (AGPL v3).
+(https://www.gnu.org/licenses/agpl-3.0-standalone.html)
+
 Credits
 -------
-* Developer:
-   Saritha @ cybrosys
-   Muhammad P @ cybrosys
-   Noorjahan P @ cybrosys
-   V16 Sabeel B @ cybrosys
+* Developers: (V10) Saritha,
+              (V11) Saritha,
+              (V12) Saritha,
+              (V13) Saritha,
+              (V14) Muhammad P,
+              (V15) Noorjahan P,
+              (V16) Sabeel B,
+              (V17) Aysha Shalin,
+              (V18) Rosmy John,
+  Contact: odoo@cybrosys.com
 
 Contacts
 --------
@@ -50,6 +53,3 @@ For support and more information, please visit `Our Website <https://cybrosys.co
 Further information
 ===================
 HTML Description: `<static/description/index.html>`__
-
-
-
