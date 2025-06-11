@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <!-- Click to Call Widget Template -->
+    <t t-name="asterisk_pro_connect.ClickToCallWidget" owl="1">
+        <div class="o_asterisk_click_to_call">
+            <button t-if="state.userConfig and state.userConfig.click_to_call_enabled"
+                    class="btn btn-sm btn-outline-primary"
+                    t-att-disabled="state.isLoading"
+                    t-on-click="() => this.makeCall(props.phoneNumber, props.partnerId, props.leadId)">
+                <i class="fa fa-phone" t-if="!state.isLoading"/>
+                <i class="fa fa-spinner fa-spin" t-if="state.isLoading"/>
+                <span t-if="!state.isLoading"> Call</span>
+                <span t-if="state.isLoading"> Calling...</span>
+            </button>
+        </div>
+    </t>
+
+    <!-- Phone Field Widget Template -->
+    <t t-name="asterisk_pro_connect.PhoneFieldWidget" owl="1">
+        <div class="o_asterisk_phone_field d-flex align-items-center">
+            <input class="form-control" 
+                   t-att-value="phoneNumber"
+                   t-att-readonly="props.readonly"
+                   t-att-placeholder="props.placeholder"/>
+            <button t-if="phoneNumber and !props.readonly"
+                    class="btn btn-sm btn-outline-primary ms-2"
+                    t-on-click="onCallClick"
+                    title="Click to call">
+                <i class="fa fa-phone"/>
+            </button>
+        </div>
+    </t>
+
+    <!-- Call Notification Template -->
+    <t t-name="asterisk_pro_connect.CallNotification" owl="1">
+        <div class="o_asterisk_call_notification">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">
+                        <i class="fa fa-phone-square text-primary me-2"/>
+                        Incoming Call
+                    </h6>
+                    <button class="btn btn-sm btn-outline-secondary" t-on-click="onClose">
+                        <i class="fa fa-times"/>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1" t-esc="props.callerName or props.callerNumber"/>
+                            <small class="text-muted" t-esc="props.callerNumber"/>
+                        </div>
+                        <div class="avatar-sm">
+                            <i class="fa fa-user-circle fa-2x text-muted"/>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-success btn-sm flex-fill" t-on-click="onAnswer">
+                            <i class="fa fa-phone"/> Answer
+                        </button>
+                        <button class="btn btn-danger btn-sm flex-fill" t-on-click="onReject">
+                            <i class="fa fa-phone-slash"/> Reject
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- User Panel Template -->
+    <t t-name="asterisk_pro_connect.UserPanel" owl="1">
+        <div class="o_asterisk_user_panel">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fa fa-phone me-2"/>
+                        Call Center
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h4 class="text-primary mb-1" t-esc="state.statistics.calls_today"/>
+                                <small class="text-muted">Calls Today</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h4 class="text-success mb-1" t-esc="state.statistics.answered_calls"/>
+                                <small class="text-muted">Answered</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Status:</span>
+                            <span class="badge" 
+                                  t-att-class="state.userConfig.online_status === 'online' ? 'bg-success' : 'bg-secondary'"
+                                  t-esc="state.userConfig.online_status"/>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Extension:</span>
+                            <span t-esc="state.userConfig.extension"/>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-sm" t-on-click="onMakeCall">
+                            <i class="fa fa-phone"/> Make Call
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" t-on-click="onViewCalls">
+                            <i class="fa fa-list"/> View Calls
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
+

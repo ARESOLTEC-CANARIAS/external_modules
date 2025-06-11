@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Demo Asterisk Server -->
+    <record id="demo_asterisk_server" model="asterisk.server">
+        <field name="name">Demo Asterisk Server</field>
+        <field name="host">demo.asterisk.local</field>
+        <field name="port">5038</field>
+        <field name="username">admin</field>
+        <field name="password">secret</field>
+        <field name="active">True</field>
+        <field name="auto_create_partners">True</field>
+        <field name="call_popup_enabled">True</field>
+        <field name="recording_enabled">False</field>
+    </record>
+
+    <!-- Demo Asterisk User -->
+    <record id="demo_asterisk_user" model="asterisk.user">
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="server_id" ref="demo_asterisk_server"/>
+        <field name="extension">1001</field>
+        <field name="sip_username">admin</field>
+        <field name="context">default</field>
+        <field name="active">True</field>
+        <field name="click_to_call_enabled">True</field>
+        <field name="call_notifications">True</field>
+        <field name="online_status">online</field>
+    </record>
+
+</odoo>
+

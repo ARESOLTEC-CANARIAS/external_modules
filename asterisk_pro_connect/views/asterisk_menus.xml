@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_asterisk_root" 
+              name="Asterisk" 
+              sequence="50"
+              web_icon="asterisk_pro_connect,static/description/icon.png"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_asterisk_config" 
+              name="Configuration" 
+              parent="menu_asterisk_root" 
+              sequence="10"
+              groups="asterisk_pro_connect.group_asterisk_manager"/>
+
+    <menuitem id="menu_asterisk_servers" 
+              name="Servers" 
+              parent="menu_asterisk_config" 
+              sequence="10"
+              action="action_asterisk_server"
+              groups="asterisk_pro_connect.group_asterisk_manager"/>
+
+    <menuitem id="menu_asterisk_users" 
+              name="User Configuration" 
+              parent="menu_asterisk_config" 
+              sequence="20"
+              action="action_asterisk_user"
+              groups="asterisk_pro_connect.group_asterisk_manager"/>
+
+    <!-- Calls Menu -->
+    <menuitem id="menu_asterisk_calls" 
+              name="Calls" 
+              parent="menu_asterisk_root" 
+              sequence="20"
+              groups="asterisk_pro_connect.group_asterisk_user"/>
+
+    <menuitem id="menu_asterisk_all_calls" 
+              name="All Calls" 
+              parent="menu_asterisk_calls" 
+              sequence="10"
+              action="action_asterisk_call"
+              groups="asterisk_pro_connect.group_asterisk_user"/>
+
+    <menuitem id="menu_asterisk_my_calls" 
+              name="My Calls" 
+              parent="menu_asterisk_calls" 
+              sequence="20"
+              action="action_asterisk_my_calls"
+              groups="asterisk_pro_connect.group_asterisk_user"/>
+
+    <menuitem id="menu_asterisk_recordings" 
+              name="Recordings" 
+              parent="menu_asterisk_calls" 
+              sequence="30"
+              action="action_asterisk_recording"
+              groups="asterisk_pro_connect.group_asterisk_user"/>
+
+    <!-- Dashboard Menu -->
+    <menuitem id="menu_asterisk_dashboard" 
+              name="Dashboard" 
+              parent="menu_asterisk_root" 
+              sequence="30"
+              action="action_asterisk_dashboard"
+              groups="asterisk_pro_connect.group_asterisk_user"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_asterisk_reports" 
+              name="Reports" 
+              parent="menu_asterisk_root" 
+              sequence="40"
+              groups="asterisk_pro_connect.group_asterisk_manager"/>
+
+    <menuitem id="menu_asterisk_call_reports" 
+              name="Call Reports" 
+              parent="menu_asterisk_reports" 
+              sequence="10"
+              action="action_asterisk_call_report"
+              groups="asterisk_pro_connect.group_asterisk_manager"/>
+
+</odoo>
+

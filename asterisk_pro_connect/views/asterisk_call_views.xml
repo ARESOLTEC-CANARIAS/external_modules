@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Asterisk Call Views -->
+    
+    <!-- Tree View -->
+    <record id="view_asterisk_call_tree" model="ir.ui.view">
+        <field name="name">asterisk.call.tree</field>
+        <field name="model">asterisk.call</field>
+        <field name="arch" type="xml">
+            <tree string="Calls" decoration-success="status=='answered'" 
+                  decoration-danger="status=='failed'" decoration-warning="status=='no_answer'">
+                <field name="start_time"/>
+                <field name="direction"/>
+                <field name="caller_number"/>
+                <field name="called_number"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="status"/>
+                <field name="total_duration_display"/>
+                <field name="has_recording"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_asterisk_call_form" model="ir.ui.view">
+        <field name="name">asterisk.call.form</field>
+        <field name="model">asterisk.call</field>
+        <field name="arch" type="xml">
+            <form string="Call">
+                <header>
+                    <button name="action_create_opportunity" type="object" 
+                            string="Create Opportunity" class="btn-primary"
+                            attrs="{'invisible': [('lead_id', '!=', False)]}"/>
+                    <button name="action_play_recording" type="object" 
+                            string="Play Recording" class="btn-secondary"
+                            attrs="{'invisible': [('has_recording', '=', False)]}"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_play_recording" type="object" 
+                                class="oe_stat_button" icon="fa-play"
+                                attrs="{'invisible': [('has_recording', '=', False)]}">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Recording</span>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <div class="oe_title">
+                        <h1>
+                            <field name="display_name"/>
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <group name="call_info">
+                            <field name="direction"/>
+                            <field name="caller_number"/>
+                            <field name="called_number"/>
+                            <field name="partner_id"/>
+                            <field name="user_id"/>
+                            <field name="lead_id"/>
+                        </group>
+                        <group name="timing">
+                            <field name="start_time"/>
+                            <field name="answer_time"/>
+                            <field name="end_time"/>
+                            <field name="ring_duration_display"/>
+                            <field name="talk_duration_display"/>
+                            <field name="total_duration_display"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Details" name="details">
+                            <group>
+                                <group name="technical">
+                                    <field name="unique_id"/>
+                                    <field name="server_id"/>
+                                    <field name="channel"/>
+                                    <field name="context"/>
+                                    <field name="extension"/>
+                                </group>
+                                <group name="quality">
+                                    <field name="quality_score"/>
+                                    <field name="is_internal"/>
+                                    <field name="is_missed"/>
+                                    <field name="tags"/>
+                                </group>
+                            </group>
+                            <group string="Notes">
+                                <field name="notes" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Recording" name="recording" 
+                              attrs="{'invisible': [('recording_id', '=', False)]}">
+                            <field name="recording_id">
+                                <form>
+                                    <group>
+                                        <field name="filename"/>
+                                        <field name="duration_display"/>
+                                        <field name="file_format"/>
+                                        <field name="status"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_asterisk_call_search" model="ir.ui.view">
+        <field name="name">asterisk.call.search</field>
+        <field name="model">asterisk.call</field>
+        <field name="arch" type="xml">
+            <search string="Calls">
+                <field name="caller_number"/>
+                <field name="called_number"/>
+                <field name="partner_id"/>
+                <field name="user_id"/>
+                <field name="lead_id"/>
+                <filter string="Inbound" name="inbound" domain="[('direction', '=', 'inbound')]"/>
+                <filter string="Outbound" name="outbound" domain="[('direction', '=', 'outbound')]"/>
+                <separator/>
+                <filter string="Answered" name="answered" domain="[('status', '=', 'answered')]"/>
+                <filter string="Missed" name="missed" domain="[('is_missed', '=', True)]"/>
+                <filter string="With Recording" name="with_recording" domain="[('has_recording', '=', True)]"/>
+                <separator/>
+                <filter string="Today" name="today" 
+                        domain="[('start_time', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))),
+                                 ('start_time', '&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]"/>
+                <filter string="This Week" name="this_week" 
+                        domain="[('start_time', '&gt;=', (context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Direction" name="group_direction" context="{'group_by': 'direction'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'status'}"/>
+                    <filter string="User" name="group_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by': 'start_time:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_asterisk_call" model="ir.actions.act_window">
+        <field name="name">All Calls</field>
+        <field name="res_model">asterisk.call</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_today': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No calls found
+            </p>
+            <p>
+                Calls will appear here automatically when they are made through
+                your configured Asterisk server.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_asterisk_my_calls" model="ir.actions.act_window">
+        <field name="name">My Calls</field>
+        <field name="res_model">asterisk.call</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('user_id', '=', uid)]</field>
+        <field name="context">{'search_default_today': 1}</field>
+    </record>
+
+</odoo>
+
