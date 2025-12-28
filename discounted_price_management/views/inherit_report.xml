@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_sale_order1_document_inherit2" inherit_id="sale.report_saleorder_document">
+            <!-- Add fixed_amount column header after th_priceunit -->
+            <xpath expr="//th[@name='th_priceunit']" position="after">
+                <th name="th_price_after_discount" class="text-end">Unit Price after Disc%</th>
+            </xpath>
+
+            <!-- Add fixed_amount column value for each line after price_unit -->
+            <xpath expr="//td[@name='td_priceunit']" position="after">
+                <td name="td_price_after_discount" class="text-end">
+                    <!-- Assuming you have a field or a method to get the fixed amount for each line -->
+                    <span t-field="line.price_after_discount"
+                          t-options='{"widget": "monetary", "format": "%.2f", "from_currency": doc.currency_id}'/>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="report_invoice_document_inherit1" inherit_id="account.report_invoice_document">
+            <xpath expr="//th[@name='th_priceunit']" position="after">
+                <th name="th_price_after_discount" class="text-end">
+                    <span>Unit Price after Disc%</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[span[@t-field='line.price_unit']]" position="after">
+                <td class="text-end">
+                    <span t-field="line.price_after_discount"/>
+                </td>
+            </xpath>
+        </template>
+    </data>
+</odoo>
