@@ -1,0 +1,39 @@
+<t t-name="bi_pos_payment.RegisterInvoicePaymentPopupWidget" owl="1">
+    <Dialog size="'md'">
+        <t t-set-slot="header">
+            <h4 class="modal-title text-break">
+                Register Payment for the Invoice and Validate
+            </h4>
+        </t>
+        <div class="modal-body">
+            <div class="body traceback" style="font-family: 'Lato-Reg';">
+                <p style="color: #875a7b;text-align: center;font-size: 20px;">Enter Payment Details Here</p>
+            </div> 
+            <div style="text-align: left; margin-left: 37px;">
+                <label style="text-align:left"> Payment Journal:  </label>
+                <select id="payment_type1" class='detail' name='type' style="height: 35px;width: 59%;float: right;   margin-right: 6%;">
+                    <t t-foreach='pos.journals' t-as='jrn' t-key='jrn.id'>
+                        <option t-att-value='jrn.id'> 
+                            <t t-esc='jrn.name'/>
+                        </option>
+                    </t>
+                </select>
+            </div><br/>
+            <div style="text-align: left; margin-left: 37px;">
+                <label style="text-align:left"> Amount:  </label><input id ="entered_amount1" type="text" class="input-field" name="code" style="height: 35px;width: 59%;float: right;   margin-right: 6%;"></input>
+            </div><br/>
+            <div style="text-align: left; margin-left: 37px;margin-top: 2%;">
+                <label style="text-align:left"> Payment Note:  </label><input id ="entered_note1" type="text" class="input-field" name="code" style="height: 35px;width: 59%;float: right;   margin-right: 6%;"></input>
+            </div>
+        </div> 
+
+        <t t-set-slot="footer">
+            <button class="button confirm btn btn-lg lh-lg btn-primary" t-on-click="register_payment">
+                Create
+            </button>
+            <button class="button cancel btn btn-lg lh-lg btn-secondary" t-on-click="props.close">
+                Cancel
+            </button>
+        </t>
+    </Dialog>
+</t>

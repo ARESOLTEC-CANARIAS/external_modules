@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="bi_pos_payment.InvoiceScreen" owl="1">
+<!--		<Dialog title.translate="Invoice Orders">-->
+			<t t-set="all_orders_list" t-value="get_all_invoice_data()"/>
+			<div class="partnerlist-screen screen h-100 d-flex flex-column bg-100">
+				<div class="top-content d-flex align-items-center p-2 border-bottom text-center">
+
+					<div class="button back btn btn-lg btn-secondary mx-2" t-on-click="back">
+						<i class="fa fa-angle-double-left"/>
+						Discard 
+					</div>
+				</div>
+				<section class="overflow-auto">
+					<table class="partner-list table table-striped w-100">
+						<thead>
+							<tr>
+								<th class="order_ref">Invoice</th>
+								<th class="order_date">Customer Ref</th>
+								<th class="order_cstmr">Total Amount</th>
+								<th class="sale_person">Due Amount</th>
+								<th class="subtotal">State</th>
+								<th class="order_total">Payment State</th>
+							</tr>
+						</thead>
+						<tbody class="partner-list-contents">
+							<t t-if="!state.all_invoice_data">
+								<tr>
+									<td>Loading....</td>
+								</tr>
+							</t>
+							<t t-if="state.all_invoice_data">
+								<t t-if="state.all_invoice_data[0]">
+									<t t-foreach="state.all_invoice_data[0]" t-as="order" t-key="order.id">
+										<InvoiceLine order = "order" onClickPosOrder.bind="clickPosOrder" />
+									</t>
+								</t>
+							</t>
+						</tbody> 
+					</table>
+				</section>
+			</div>
+<!--		</Dialog>-->
+	</t>
+</templates>

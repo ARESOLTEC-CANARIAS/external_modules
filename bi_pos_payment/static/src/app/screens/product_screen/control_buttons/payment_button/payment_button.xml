@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="bi_pos_payment.PaymentButton" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='props.showRemainingButtons']/div" position="inside">
+            <button t-att-class="buttonClass" t-on-click="() => this.onClickPaymentCustom()" t-if="pos.config.allow_pos_payment">
+                <i class="fa fa-money" role="img" aria-label="Payment" title="Payment" /> Payment
+            </button> 
+        </xpath>
+    </t>
+</templates>

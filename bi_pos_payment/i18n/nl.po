@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_pos_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-12 07:14+0000\n"
+"PO-Revision-Date: 2023-05-12 07:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_config__allow_pos_invoice
+#: model:ir.model.fields,field_description:bi_pos_payment.field_res_config_settings__allow_pos_invoice
+msgid "Allow POS Invoice Payment and Validation"
+msgstr "Betaling en validatie van POS-facturen toestaan"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_config__allow_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_res_config_settings__allow_pos_payment
+msgid "Allow POS Payments"
+msgstr "POS-betalingen toestaan"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Amount Due:"
+msgstr "Verschuldigd bedrag:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Popup/RegisterInvoicePaymentPopupWidget.js:0
+#, python-format
+msgid "Amount Error"
+msgstr "Bedrag Fout"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Amount:"
+msgstr "Hoeveelheid:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Close"
+msgstr "Dichtbij"
+
+#. module: bi_pos_payment
+#: model:ir.model,name:bi_pos_payment.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuratie-instellingen"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__create_uid
+msgid "Created by"
+msgstr "Gemaakt door"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__create_date
+msgid "Created on"
+msgstr "Gemaakt op"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Customer Ref"
+msgstr "Klantref"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Customer:"
+msgstr "Klant:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Discard"
+msgstr "Weggooien"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__display_name
+msgid "Display Name"
+msgstr "Weergavenaam"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Draft/New"
+msgstr "Concept/Nieuw"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Due Amount"
+msgstr "Te betalen bedrag"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Enter Payment Details Here"
+msgstr "Voer hier betalingsgegevens in"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Popup/RegisterInvoicePaymentPopupWidget.js:0
+#, python-format
+msgid "Entered amount is larger then due amount. please enter valid amount"
+msgstr "Het ingevoerde bedrag is groter dan het verschuldigde bedrag. vul a.u.b. een geldig bedrag in"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__id
+msgid "ID"
+msgstr "ID kaart"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "In Payment"
+msgstr "Bij betaling"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Invoice Details"
+msgstr "Factuurgegevens"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Invoicing App Legacy"
+msgstr "Verouderde factureringsapp"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_pos_create_customer_payment__write_date
+msgid "Last Updated on"
+msgstr "Laatst geupdate op"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Loading...."
+msgstr "Bezig met laden...."
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Not Paid"
+msgstr "Niet betaald"
+
+#. module: bi_pos_payment
+#: model:ir.model.fields,field_description:bi_pos_payment.field_account_payment__notes_pos
+msgid "Notes"
+msgstr "Notities"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Screens/POSInvoiceScreen.js:0
+#, python-format
+msgid "Offline"
+msgstr "offline"
+
+#. module: bi_pos_payment
+#: model_terms:ir.ui.view,arch_db:bi_pos_payment.bi_pos_reports
+msgid "POS Payment Configuration"
+msgstr "POS-betalingsconfiguratie"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Paid"
+msgstr "Betaald"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Partially Paid"
+msgstr "Gedeeltelijk betaald"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Payment"
+msgstr "Betaling"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Payment Journal:"
+msgstr "betalingsdagboek:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Payment Note:"
+msgstr "Betalingsnota:"
+
+#. module: bi_pos_payment
+#: model_terms:ir.ui.view,arch_db:bi_pos_payment.inherit_view_payment_form_notes
+msgid "Payment Notes"
+msgstr "Betaalnota's"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Payment State"
+msgstr "Betalingsstaat"
+
+#. module: bi_pos_payment
+#: model:ir.model,name:bi_pos_payment.model_account_payment
+msgid "Payments"
+msgstr "Betalingen"
+
+#. module: bi_pos_payment
+#: model:ir.model,name:bi_pos_payment.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Point of Sale-configuratie"
+
+#. module: bi_pos_payment
+#: model:ir.model,name:bi_pos_payment.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Point of Sale-sessie"
+
+#. module: bi_pos_payment
+#: model:ir.model,name:bi_pos_payment.model_pos_create_customer_payment
+msgid "Pos Create Customer Payment"
+msgstr "Pos Creëer klantbetaling"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Posted"
+msgstr "Geplaatst"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Register Payment"
+msgstr "Betaling registreren"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Reversed"
+msgstr "Teruggedraaid"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "State"
+msgstr "Staat"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Status:"
+msgstr "Toestand:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Total Amount"
+msgstr "Totaalbedrag"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/xml/pos_payment.xml:0
+#, python-format
+msgid "Total Amount:"
+msgstr "Totaalbedrag:"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Screens/POSInvoiceScreen.js:0
+#, python-format
+msgid "Unable to load orders."
+msgstr "Kan bestellingen niet laden."
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Screens/ClientListScreen.js:0
+#: code:addons/bi_pos_payment/static/src/js/Screens/POSInvoiceScreen.js:0
+#, python-format
+msgid "Unknown customer"
+msgstr "Onbekende klant"
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Screens/POSInvoiceScreen.js:0
+#, python-format
+msgid "You cannot Register Payment. Select Invoice first."
+msgstr "U kunt geen betaling registreren. Selecteer eerst Factuur."
+
+#. module: bi_pos_payment
+#. odoo-javascript
+#: code:addons/bi_pos_payment/static/src/js/Screens/ClientListScreen.js:0
+#, python-format
+msgid "You cannot Register Payment. Select customer first."
+msgstr "U kunt geen betaling registreren. Selecteer eerst de klant."

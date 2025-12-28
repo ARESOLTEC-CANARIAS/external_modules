@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_custom_pos_payment" inherit_id="point_of_sale.template" xml:space="preserve"> 
+
+	<t t-name="PartnerList" t-inherit="point_of_sale.PartnerList" t-inherit-mode="extension" owl="1">
+		<xpath expr="//tbody" position="replace">
+			<tbody>
+				<t t-foreach="getPartners()" t-as="partner" t-key="partner.id">
+					<PartnerLine close="props.close" partner="partner" isSelected="props.partner?.id === partner.id" isBalanceDisplayed="isBalanceDisplayed" onClickEdit.bind="(p) => this.editPartner(p)" onClickUnselect.bind="() => this.clickPartner()" onClickPayment.bind="addPayment" onClickOrders.bind="(p) => this.goToOrders(p)" onClickPartner.bind="clickPartner"/>
+				</t>
+			</tbody>
+		</xpath>
+	</t>
+	<t t-name="PartnerLine" t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension" owl="1">
+		<xpath expr="//td[hasclass('edit-partner-button-cell')]/Dropdown/t" position="inside">
+			<DropdownItem onSelected="() => props.onClickPayment(props.partner)">
+				<i class='fa fa-university'/>
+				Register Payment
+			</DropdownItem>
+		</xpath>
+	</t> 
+</templates>
