@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record id="scaffold_order_line_product_product" model="ir.ui.view">
+        <field name="name">binhex.product.product.scaffold</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after"> 
+                <field name="default_service"/>                            
+            </xpath>            
+        </field>
+    </record>
+</data>
+</odoo>    

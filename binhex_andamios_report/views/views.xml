@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="binhex_andamios_report.list">
+      <field name="name">binhex_andamios_report list</field>
+      <field name="model">binhex_andamios_report.binhex_andamios_report</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="binhex_andamios_report.action_window">
+      <field name="name">binhex_andamios_report window</field>
+      <field name="res_model">binhex_andamios_report.binhex_andamios_report</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="binhex_andamios_report.action_server">
+      <field name="name">binhex_andamios_report server</field>
+      <field name="model_id" ref="model_binhex_andamios_report_binhex_andamios_report"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="binhex_andamios_report" id="binhex_andamios_report.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="binhex_andamios_report.menu_1" parent="binhex_andamios_report.menu_root"/>
+    <menuitem name="Menu 2" id="binhex_andamios_report.menu_2" parent="binhex_andamios_report.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="binhex_andamios_report.menu_1_list" parent="binhex_andamios_report.menu_1"
+              action="binhex_andamios_report.action_window"/>
+    <menuitem name="Server to list" id="binhex_andamios_report" parent="binhex_andamios_report.menu_2"
+              action="binhex_andamios_report.action_server"/>
+-->
+  </data>
+</odoo>

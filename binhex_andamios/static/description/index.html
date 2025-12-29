@@ -1,0 +1,153 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="display: flex;
+                                            align-content: center;
+                                            justify-content: center;
+                                            flex-wrap: wrap;">
+        <h2 class="oe_slogan" style="color:#578701; 
+                                        display: inline;">
+            Bin 
+        </h2>
+        <h2 class="oe_slogan" style="color:#2976FD; 
+                                        display: inline; 
+                                        margin-left: 0px;">
+            hex And
+        </h2>
+        <h2 class="oe_slogan" style="color:#FF5801; 
+                                        display: inline; 
+                                        margin-left: 0px;">
+            amios</h2>
+        </div>
+</section>
+<!--
+    á = &#225;
+    é = &#233;
+    í = &#237;
+    ó = &#243;
+    ú = &#250;
+    ñ = &#241;
+-->
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">        
+        <div class="container" style="font-size: 17px; color: black;">
+            <div>
+                <div class="text-center  oe_span12 mt-5 mb-5">
+                    <h1>
+                        Configuraciones previas para el correcto funcionamiento
+                    </h1>
+                </div>
+
+                <div class="oe_span12 mt-3">
+                    <h3>Primero debemos acceder a los ajustes de Binhex Andamios</h3>
+                    
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/ajustesPreview.png">   
+                    </div>
+
+                    <p>En el campo de <i>UdM's de d&#237;as</i> se deben a&#241;adir las unidades de medidas que se tomar&#225;n como d&#237;as.</p>
+                    <p>
+                        En el campo de <i>Servicios de andamios</i> se deben a&#241;adir 
+                        los servicios para los que se crear&#225;n andamios cuando sean detectados en un presupuesto.
+                    </p>
+
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/ejemplosValores.png">   
+                    </div>
+                </div>
+
+                <div class="oe_span12 mt-3">
+                    <h3>A continuaci&#225;n debemos acceder a los ajustes de Ventas</h3>
+                    
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/ventas.png">
+                    </div>
+
+                    <p>Deberemos marcar la opci&#243;n de <i>Variantes</i>.</p>
+                    <p>Esta opci&#225;n nos permitir&#225; ver las variantes de productos existentes, que posteriormente tendremos que modificar.</p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/variantes.png">   
+                    </div>
+                </div>
+                
+                <div class="oe_span12 mt-3">
+                    <h3>Ahora nos dirigiremos a nuestros productos servicios</h3>
+                    <p>Podemos encontrar los servicios desde la aplicaci&#243;n de inventario o incluso desde la aplicaci&#243;n de Ventas.</p>
+                    <p>Una vez dentro, tendremos que elegir los servicios que representar&#225;n el Montaje, Desmontaje, Alquiler, Transporte y Ampliaci&#225;n.</p>
+                    <p>Para esto tenemos la variable <i>Tipo de servicio de andamio</i></p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/product_templ_type.png">   
+                    </div>
+                </div>
+
+                <div class="oe_span12 mt-3">
+                    <h3>Ahora modificaremos las variantes de productos</h3>
+                    <p>Debido a la gran cantidad de variantes que pueden existir de cada servicio, debemos elegir las variantes que se usaran por defecto para Montaje, Desmontaje, Alquiler y Transporte. </p>
+                    <p>Para esto tenemos la variable <i>Servicio por defecto</i></p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/config/product_product_type.png">   
+                    </div>
+                    <p> En este caso, los que elijamos por defecto ser&#225;n los servicios que se usar&#225;n para generar las subtareas de cada tipo.
+                        Es decir, si generamos una subtarea(de manera autom&#225;tica o a trav&#225;s del presupuesto) de tipo montaje, el servicio al que estar&#225; linkeado dicha tarea
+                        ser&#225; la variante de producto que hayamos elegido
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="text-center oe_span12 mt-5 mb-5">
+                    <h1>
+                        Explicaci&#243;n del funcionamiento
+                    </h1>
+                </div>
+                <div class="oe_span12 mt-3 mb-4">
+                    <p>Con este m&#243;dulo podremos presupuestar, facturar y crear proyectos con subtareas en base a los andamios.</p>
+                </div>
+                <div class="oe_span12 mt-3">
+                    <h2 class="mb-4">Presupuestos</h2>
+                    <p>Una vez confirmemos un presupuesto, se asignar&#225; un andamio a las lineas que tengan los servicios que hayamos elegido en la configuraci&#243;n de manera autom&#225;tica.</p>
+                    <p>Tambi&#233;n, si tenemos que configurado que se creen tareas con esos servicios, se har&#225; una tarea padre por andamio, que contendr&#225; al resto de tareas que representa cada linea con ese mismo andamio.</p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/explication/presupuesto.png">   
+                    </div>
+                    
+                    <p>Si queremos presupuestar m&#225;s de un andamio, se puede hacer como se ve en la imagen de arriba. De esta manera se crear&#225; un andamio por secci&#243;n.</p>
+                    
+                    <p>Una vez confirmemos, veremos la siguiente pantalla</p>
+
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/explication/presupuesto_confirmado.png">   
+                    </div>
+                    <p>Como se puede ver, se ha creado 1 andamio por cada secci&#243;n. Desde aqu&#237; podremos seguir el flujo normal de facturaci&#243;n.</p>
+                </div>
+            
+
+                <div class="oe_span12 mt-5">
+                    <h2 class="mb-4">Proyectos/Tareas</h2>
+                    <p>El flujo de trabajo dentro de los proyectos ser&#225; el siguiente.</p>
+                    <p>Primero haremos una tarea que represente al andamio con el que se vaya a trabajar. Esta tarea ser&#225; considerada la tarea padre de dicho andamio.</p>
+                    <p>
+                        Esta tarea padre tendr&#225; sub-tareas que representar&#225;n los servicios de montaje, desmontaje, alquiler y transporte. 
+                        Para generar estas sub-tareas nos iremos a la pesta&#241;a de Sub-Tareas y podremos elegir cual queremos generar. 
+                        Las sub-tareas de alquiler se generar&#225;n con un bot&#243;n. La ventaja de esto es que las sub-tareas de alquiler te las genera de manera autom&#225;tica de mes a mes.
+                    </p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/explication/tarea_padre.png">   
+                    </div>
+                    <p>Si se quiere cambiar la cantidad de metros c&#241;bicos o las fechas de dichas sub-tareas, se debe hacer desde la tarea padre y dicho cambio ser&#225; replicado en todas las hijas</p>
+                    <p>Adem&#225;s dentro de las sub-tareas podremos cambiar el servicio que usemos posteriormente para facturar. Por defecto se crear&#225;n con las que se eligieron durante la configuraci&#243;n</p>
+                </div>
+
+                <div class="oe_span12 mt-5">
+                    <h2 class="mb-4">Facturaci&#243;n</h2>
+                    <p>Este m&#243;dulo nos permitir&#225; facturar las tareas que hemos creado previamente.</p>
+                    <p>
+                        Para esto debemos activar la variable <i>Mostrar tareas</i> para que se nos muestre la pesta&#241;a de <i>Partes de trabajo</i>.
+                        Desde aqu&#237; elegiremos las tareas que queremos facturar y una vez guardemos, se nos generar&#225;n las l&#237;neas de factura autom&#225;ticamente
+                    </p>
+                    <div class="oe_demo oe_screenshot" style="display: block;max-width: 84%;margin: 40px 8%;">
+                        <img src="index_imgs/explication/tarea_factura.png">
+                        <img src="index_imgs/explication/lineas_factura.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

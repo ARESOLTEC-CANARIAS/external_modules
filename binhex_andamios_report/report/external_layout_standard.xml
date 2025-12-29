@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="external_layout_standard_inherit" name="external_layout_standard_inherit" inherit_id="web.external_layout_standard">
+            <xpath expr="//t/div[1]" position="replace">
+                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <t t-if="'show_logo' in o.fields_get() and not o.show_logo">
+                                    <img src="/binhex_andamios_report/static/src/logo4.png" align="left" style="max-width: 50%; height: auto; display: block; visibility: hidden;"/>
+                                </t>
+                                <t t-else="">
+                                    <img src="/binhex_andamios_report/static/src/logo4.png" align="left" style="max-width: 50%; height: auto; display: block;"/>
+                                </t>
+                            </div>
+                            <div class="col-6">
+                                <t t-if="'show_logo' in o.fields_get() and not o.show_logo">
+                                    <img src="/binhex_andamios_report/static/src/foto1.png" align="right" style="max-width: 110%; height: auto; display: block; visibility: hidden;"/>
+                                </t>
+                                <t t-else="">
+                                    <img src="/binhex_andamios_report/static/src/foto1.png" align="right" style="max-width: 110%; height: auto; display: block;"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_custom_side_text">
+                        <t t-if="'show_logo' in o.fields_get() and not o.show_logo">
+                            <span/>
+                        </t>
+                        <t t-else="">
+                            <span>Registered in the Mercantile Registry of S/C de Tenerife, Volume 1349, Folio 161, Page TF. 6110. Inscription 5º - B-38316758</span>
+                        </t>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//t/div[3]" position="replace">
+                <div t-attf-class="footer o_standard_footer o_company_#{company.id}_layout">
+                    <div class="container mb-1">
+                        <t t-if="'show_logo' in o.fields_get() and not o.show_logo">
+                            <div class="row" style="visibility: hidden;">
+                                <div class="col-12 text-center">
+                                    <img src="/binhex_andamios_report/static/src/footer_ateca.jpg"/>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-else="">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="/binhex_andamios_report/static/src/footer_ateca.jpg"/>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="text-center" style="border-top: 1px solid black;">
+                        <ul class="list-inline mb4">
+                            <li t-if="company.phone" class="list-inline-item d-inline"><span class="o_force_ltr" t-field="company.phone"/></li>
+                            <li t-if="company.email" class="list-inline-item d-inline"><span t-field="company.email"/></li>
+                            <li t-if="company.website" class="list-inline-item d-inline"><span t-field="company.website"/></li>
+                            <li t-if="company.vat" class="list-inline-item d-inline"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-field="company.vat"/></li>
+                        </ul>
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Page: <span class="page"/> / <span class="topage"/>
+                        </div>
+                        <div t-if="report_type == 'pdf' and display_name_in_footer" class="text-muted">
+                            <span t-field="o.name"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

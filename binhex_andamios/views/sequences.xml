@@ -1,0 +1,15 @@
+<odoo>
+  <data noupdate="1">
+  
+    <record id="seq_name_scaffold" model="ir.sequence">
+      <field name="name">Scaffold</field>
+      <field name="code">scaffold.scaffold</field>
+      <field name="active">TRUE</field>
+      <field name="number_increment">1</field>
+      <field name="number_next">1</field>
+      <field name="prefix">SCF/</field>
+      <field name="padding">5</field>
+    </record>
+
+  </data>
+</odoo>

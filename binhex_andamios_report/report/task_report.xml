@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_project_task_document">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <style>
+                    table {
+                        border-collapse: collapse;
+                    }
+                    .sign_img {
+                      height: 70%;
+                      width: 70%;
+                    }
+                    table, th, td {
+                      border: 1px solid black;
+                    }
+                    .boldBorder{
+                         border: 1px solid black;
+                    }
+                    .reporte{
+                        margin-left: 0px;
+                        margin-right: 0px;
+                    }
+                    .tableAll {
+                        width: 900px;
+                    }
+                    .center{
+                        text-align: center;
+                    }
+                    .right{
+                        text-align: right;
+                    }
+                    .boldText{
+                        font-weight: bold;
+                    }
+                    table, th, td {
+                        border: 1px solid black;
+                    }
+                    .boldBorder{
+                        border: 1px solid black;
+                    }
+                    .boldBorder2{
+                        border: 1px solid black;
+                    }
+                    .tableAll {
+                        width: 900px;
+                    }
+                    .center{
+                        text-align: center;
+                    }
+                    .right{
+                        text-align: right;
+                    }
+                    .left{
+                        text-align: left;
+                    }
+                    .boldText{
+                        font-weight: bold;
+                    }
+                    .yellow{
+                        background-color: rgb(255, 255, 130);
+                    }
+                    .padding {
+                        padding-top: 1;
+                        padding-bottom:3;
+                    }
+                    table {
+                        border-collapse: collapse;
+                    }
+                </style>
+                <table class="tableAll boldBorder">
+                    <tr>
+                        <td class="boldBorder center boldText padding" rowspan="4"> <br/>  <img src="logo.png" width="150" height="100"/></td>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Cliente:</td>
+                        <td class="boldBorder" colspan="2">
+                            <span t-if="doc.partner_id">
+                                <p style="margin-left: 3px" t-field="doc.partner_id"/>
+                            </span>
+                        </td>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Oferta Nº:</td>
+                        <td class="boldBorder" colspan="2">
+                            <span t-if="doc.sale_line_id.order_id">
+                                <p  style="margin-left: 3px" t-field="doc.sale_line_id.order_id.name"/>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Obra:</td>
+                        <td class="boldBorder" colspan="2">
+                            <span t-if="doc.project_id">
+                                <p  style="margin-left: 3px" t-field="doc.project_id"/>
+                            </span>
+                        </td>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Fecha:</td>
+                        <td class="boldBorder" colspan="1">
+                            <span t-if="doc.date_deadline">
+                                <p style="margin-left: 3px" t-esc="doc.date_deadline"></p>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText" colspan="1" rowspan="2">&amp;nbsp;Situación:</td>
+                        <td class="boldBorder" colspan="2" rowspan="2">
+                            <span t-if="doc.scaffold_id">
+                                <p style="margin-left: 3px" t-field="doc.scaffold_id"/>
+                            </span>
+                        </td>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Referencia:</td>
+                        <td class="boldBorder" colspan="1">
+                            <span t-if="doc.code">
+                                <p style="margin-left: 3px" t-field="doc.code"/>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText" colspan="1">&amp;nbsp;Supervisor:</td>
+                        <td class="boldBorder" colspan="1">
+                            <p style="margin-left: 3px" t-field="doc.user_id"/>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tableAll boldBorder">
+                    <tr class="yellow">
+                        <td class="boldBorder boldText center" colspan="3"> Servicio</td>
+                        <td class="boldBorder boldText center"> M3</td>
+                        <td class="boldBorder boldText center"> M3 A FACTURAR </td>
+                        <td class="boldBorder boldText center"> Precio M3</td>
+                        <td class="boldBorder boldText center"> Suma</td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio Montaje</td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'assembly') and child.cubic_meters">
+                                    <p t-field="child.cubic_meters"></p>
+                                </div>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'assembly') and child.cubic_meters">
+                                    <p t-field="child.cubic_meters"></p>
+                                </div>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'assembly')">
+                                    <span t-esc="'%.2f'%(child.get_right_tariff_price_cubic())"></span> €&amp;nbsp;
+                                </div>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'assembly')">
+                                    <span t-esc="'%.2f'%(child.get_right_tariff_price_cubic() * float(child.cubic_meters))"></span> €&amp;nbsp;
+                                </div>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio Desmontaje</td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'disassembly') and child.cubic_meters">
+                                    <p t-field="child.cubic_meters"></p>
+                                </div>
+                            </t>
+                        </td> <!-- temporal -->
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'disassembly') and child.cubic_meters">
+                                    <p t-field="child.cubic_meters"></p>
+                                </div>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'disassembly')">
+                                    <span t-esc="'%.2f'%(child.get_right_tariff_price_cubic())"></span> €&amp;nbsp;
+                                </div>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" >
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <div t-if="(child.task_type == 'disassembly')">
+                                    <span t-esc="'%.2f'%(child.get_right_tariff_price_cubic() * float(child.cubic_meters))"></span> €&amp;nbsp;
+                                </div>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio Montaje (difícil acceso)</td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio Desmontaje (difícil acceso)</td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio volado Montaje (cota=_________)</td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" colspan="3"> Andamio volado Desmontaje (cota=_________)</td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                        <td class="boldBorder boldText center" > </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText center" rowspan="2" colspan="3"> Alquiler de Andamio</td>
+                        <td class="boldBorder center" rowspan="2">
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <span t-if="(child.task_type == 'renting') and child.cubic_meters">
+                                    <p t-esc="child.cubic_meters"/>
+                                </span>
+                            </t>
+                        </td>
+                        <td class="boldBorder boldText center yellow" rowspan="1"> Montaje </td>
+                        <td class="boldBorder boldText center yellow" rowspan="1">Desmontaje</td>
+                        <td class="boldBorder center" rowspan="2">
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <span t-if="(child.task_type == 'renting') and child.cubic_meters">
+                                    <span t-esc="'%.2f'%(child.get_right_tariff_price_cubic() * float(doc.count_days()) * child.cubic_meters)"/> €&amp;nbsp;
+                                </span>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder center" rowspan="1">
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <span t-if="(child.task_type == 'assembly') and child.assembly_date">
+                                    <p t-esc="child.assembly_date"/>
+                                </span>
+                            </t>
+                        </td>
+                        <td class="boldBorder center" rowspan="1">
+                            <t t-foreach="doc.child_ids" t-as="child">
+                                <span t-if="(child.task_type == 'disassembly') and child.disassembly_date">
+                                    <p t-esc="child.disassembly_date"/>
+                                </span>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder" colspan="10"><p style="margin-left: 3px" class="boldText">Observaciones</p>
+                        <div style="margin-left: 3px" t-if="doc.description">&amp;nbsp;
+                            <p t-field="doc.description"/>
+                        </div>
+                        <!--observacion?--></td><!-- ? no se de donde se saca esto -->
+                    </tr>
+                    <tr>
+                        <td class="boldBorder boldText" colspan="3" rowspan="2">
+                            <div style="margin-left: 3px">Firma Ateca</div>
+                            <t t-if="doc.user_id.digital_signature">
+                                <img class="sign_img" t-att-src="'data:image/png;base64,%s' % to_text(doc.user_id.digital_signature)"/>
+                            </t>
+                        </td>
+                        <td class="boldBorder boldText" colspan="3" rowspan="2">
+                            <div style="margin-left: 3px">Conforme cliente</div>
+                            <t t-if="doc.signature">
+                                <img class="sign_img" t-att-src="'data:image/png;base64,%s' % to_text(doc.signature)"/>
+                            </t>
+                        </td>
+                        <td class="boldBorder boldText center" colspan="2" rowspan="1"> Total </td>
+                    </tr>
+                    <tr>
+                        <td class="boldBorder center" colspan="2" rowspan="1">
+                            <div><p t-esc="'{:.2f}'.format(doc.total()) + ' €'"></p></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="report_original_project_task">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="binhex_andamios_report.report_project_task_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+    <template id="report_original_project_task_scaffold">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set= "doc" t-value="doc.task_id"/>
+                <t t-call="binhex_andamios_report.report_project_task_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

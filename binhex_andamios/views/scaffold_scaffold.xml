@@ -1,0 +1,229 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="andamios_list">
+      <field name="name">andamios.list</field>
+      <field name="model">scaffold.scaffold</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="client_id"/>
+          <field name="create_date"/>
+          <field name="order_ids" readonly="1"/>
+          <field name="task_id" readonly="1"/>
+          <field name="stage_id"/>
+          <field name="parent_id" invisible="1"/>
+          <field name="scaffold_extend_ids"/>
+        </list>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="andamios_form">
+      <field name="name">andamios.form</field>
+      <field name="model">scaffold.scaffold</field>
+      <field name="arch" type="xml">
+        <form>
+          <header invisible="is_extension == True">
+            <button name="create_sale_order" type="object" string="Create Sale Order" class="oe_highlight"/>
+            <button name="create_invoice" type="object" string="Create Invoice" class="oe_highlight"/>
+            <button name="create_task" type="object" string="Create Task" class="oe_highlight" invisible="task_id != False"/>
+            <field name="stage_id" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
+          </header>
+          <sheet>
+            <div class="oe_button_box" name="button_box">
+                <button name="preview_project" type="object" class="oe_stat_button" icon="fa-puzzle-piece icon" invisible="task_id == False">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text">Project</span>
+                    </div>
+                </button>
+            </div>
+            <div class="oe_title">
+              <h1>
+                <field name="name"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="client_id" readonly="is_extension == True or task_id != False"/>
+                <field name="parent_id" readonly='1' invisible="parent_id == False"/>
+                <field name="supervisor_id" required="1"/>
+              </group>
+              <group>
+                <field name="pricelist_id" required="is_extension == False" readonly="is_extension == True" invisible="is_extension == True and id == False"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Info" name="infoo_page">
+                <group>
+                  <group>
+                    <field name="project_id" required="1"/>
+                    <field name="task_id" readonly="1" invisible="project_id == False or task_id == False"/>
+                    <field name="fast_task" invisible="project_id == False and task_id != False" />
+                  </group>
+                  <group/>
+                  <group>
+                    <field name="width" required="fast_task == True"/>
+                    <field name="llength" required="fast_task == True"/>
+                    <field name="height" required="fast_task == True"/>
+                    <field name="addit_modules"/>
+                    <field name="add_modules"/>
+                  </group>
+                  <group>
+                    <field name="assembly_date" required="fast_task == True"/>
+                    <field name="subscribe_date" required="fast_task == True"/>
+                    <field name="unsubscribe_date" required="fast_task == True"/>
+                    <field name="disassembly_date" required="fast_task == True"/>
+                  </group>
+                  <group>
+                    <field name="cubic_meters" readonly="1"/>
+                    <field name="location"/>
+                    <field name="zone"/>
+                  </group>
+                  <group>
+                    <field name="applicant" domain="[('parent_id', 'child_of' , client_id)]" context="{'show_name_only': True}"/>
+                    <field name="payer" domain="[('parent_id', 'child_of' , client_id)]" context="{'show_name_only': True}"/>
+                    <field name="supervisor_client" domain="[('parent_id', 'child_of' , client_id)]" context="{'show_name_only': True}"/>
+                  </group>
+                  <group>
+                    <field name="ot_andamio"/>
+                    <field name="po_andamio"/>
+                  </group>
+                  <group colspan="2">
+                    <field name="image" widget="image" class="oe_left" />
+                    <field name="description" widget="html"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Sale orders" name="sale_order_page" invisible="is_extension == True">
+                <field name="order_ids" readonly="0">
+                  <list>
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="name" string="Number" readonly="1" decoration-bf="1"/>
+                    <field name="date_order" string="Order Date" widget="date" optional="show"/>
+                    <field name="commitment_date" optional="hide"/>
+                    <field name="expected_date" optional="hide"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                    <field name="activity_ids" widget="list_activity" optional="show"/>
+                    <field name="team_id" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="show" readonly="1"/>
+                    <field name="amount_untaxed" sum="Total Tax Excluded" widget="monetary" optional="hide"/>
+                    <field name="amount_tax" sum="Tax Total" widget="monetary" optional="hide"/>
+                    <field name="amount_total" sum="Total Tax Included" widget="monetary" decoration-bf="1" optional="show"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="invoice_status" decoration-success="invoice_status == 'invoiced'" decoration-info="invoice_status == 'to invoice'" decoration-warning="invoice_status == 'upselling'" widget="badge" optional="show"/>
+                    <field name="tag_ids" optional="hide" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="state" invisible="1"/>
+                    <button type="object" name="get_formview_action" string="Open" icon="fa-edit"/>
+                  </list>
+                </field>
+              </page>
+              <page string="Invoices" name="invoices_page" invisible="is_extension == True">
+                <field name="account_move_ids" readonly="0">
+                  <list>
+                    <field name="name" decoration-bf="1"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="invoice_source_email" invisible="1"/>
+                    <field name="invoice_partner_display_name" invisible="context.get('default_move_type') not in ('in_invoice', 'in_refund','in_receipt')" groups="base.group_user" string="Vendor"/>
+                    <field name="invoice_partner_display_name" invisible="context.get('default_move_type') not in ('out_invoice', 'out_refund','out_receipt')" groups="base.group_user" string="Customer"/>
+                    <field name="invoice_date" optional="show" invisible="context.get('default_move_type') not in ('in_invoice', 'in_refund','in_receipt')" string="Bill Date"/>
+                    <field name="invoice_date" optional="show" invisible="context.get('default_move_type') not in ('out_invoice', 'out_refund','out_receipt')" string="Invoice Date"/>
+                    <field name="invoice_date_due" widget="remaining_days" optional="show" invisible="payment_state in ['paid', 'in_payment', 'reversed']"/>
+                    <field name="invoice_origin" optional="hide" string="Source Document"/>
+                    <field name="payment_reference" optional="hide" invisible="context.get('default_move_type') in ('out_invoice', 'out_refund','out_receipt')"/>
+                    <field name="ref" optional="hide"/>
+                    <field name="invoice_user_id" optional="hide" invisible="context.get('default_move_type') not in ('out_invoice', 'out_refund','out_receipt')" string="Sales Person" widget="many2one_avatar_user"/>
+                    <field name="activity_ids" widget="list_activity" optional="show"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" optional="show"/>
+                    <field name="amount_untaxed_signed" string="Tax Excluded" sum="Total" optional="show"/>
+                    <field name="amount_tax_signed" string="Tax" sum="Total" optional="hide"/>
+                    <field name="amount_total_signed" string="Total" sum="Total" decoration-bf="1" optional="show"/>
+                    <field name="amount_residual_signed" string="Amount Due" sum="Amount Due" optional="hide"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="state" widget="badge" decoration-success="state == 'posted'" decoration-info="state == 'draft'" optional="show"/>
+                    <field name="payment_state" widget="badge" decoration-danger="payment_state == 'not_paid'" decoration-warning="payment_state in ('partial', 'in_payment')" decoration-success="payment_state in ('paid', 'reversed')" invisible="payment_state in ('invoicing_legacy')"/>
+                    <field name="move_type" invisible="context.get('default_move_type', True)"/>
+                    <button type="object" name="get_formview_action" string="Open" icon="fa-edit"/>
+                  </list>
+                </field>
+              </page>
+              <page string="Characteristics" name="characteristics_page">
+                <group>
+                  <field name="assembly_prod_id"/>
+                  <field name="disassembly_prod_id"/>
+                  <field name="renting_prod_id"/>
+
+                </group>
+              </page>
+              <page string="Extensions" name="extens_page" invisible="is_extension == True">
+                <group>
+                  <field name="is_extension" invisible="1"/>
+                  <field name="parent_id" invisible="1"/>
+                  <field name="scaffold_extend_ids" readonly="0" context="{'default_is_extension': True, 'default_pricelist_id': pricelist_id, 'default_client_id': client_id, 'pricelist_id': pricelist_id}">
+                    <list>
+                      <field name="name"/>
+                      <field name="task_id"/>
+                      <field name="cubic_meters"/>
+                    </list>
+                  </field>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <chatter/>
+        </form>
+      </field>
+    </record>
+
+    <record id="andamios_kanban" model="ir.ui.view">
+        <field name="name">andamios.kanban</field>
+        <field name="model">scaffold.scaffold</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="client_id" class="o_kanban_mobile" sample="1">
+                <field name="name"/>
+                <field name="task_count"/>
+                <field name="sales_order_count"/>
+                <field name="invoice_count"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong><t t-esc="record.name.value"/></strong>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-4">
+                                  <a class="o_project_kanban_box" name="action_view_tasks" type="object">
+                                    <div>
+                                      <span class="o_value"><t t-esc="record.task_count.value"/></span>
+                                      <span class="o_label">Tasks</span>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div class="col-4">
+                                   <a class="o_project_kanban_box" name="action_view_sale_orders" type="object">
+                                    <div>
+                                      <span class="o_value"><t t-esc="record.sales_order_count.value"/></span>
+                                      <span class="o_label">S.O.</span>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div class="col-4">
+                                  <a class="o_project_kanban_box" name="action_view_invoices" type="object">
+                                    <div>
+                                      <span class="o_value"><t t-esc="record.invoice_count.value"/></span>
+                                      <span class="o_label">Invoices</span>
+                                    </div>
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+  </data>
+</odoo>

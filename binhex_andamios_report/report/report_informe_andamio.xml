@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_informe_andamio_document">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <style>
+                    table {
+                        border-collapse: collapse;
+                    }
+                    table, th, td {
+                        border: 2px solid black;
+                    }
+                    .boldBorder{
+                        border: 4px solid black;
+                    }
+                    .reporte{
+                        margin-left: 0px;
+                        margin-right: 0px;
+                    }
+                    .tableAll {
+                        width: 900px;
+                        }
+                    .center{
+                        text-align: center;
+                    }
+
+                    .right{
+                        text-align: right;
+                    }
+
+                    .boldText{
+                        font-weight: bold;
+                    }
+                </style>
+                <div class="reporte">
+                    <table class="tableAll boldBorder">
+                        <tr>
+                            <td class="boldBorder boldText" rowspan="5"> <img src="logo.png"/> </td>
+                            <td class="boldBorder boldText">Cliente</td>
+                            <td class="boldBorder boldText center" colspan="3">
+                                <div t-if="doc.partner_id">
+                                    <p t-field="doc.partner_id"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder boldText">Oferta Nº</td>
+                            <td class="boldBorder boldText">
+                                <div t-if="doc">
+                                    <p t-field="doc.name"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boldBorder boldText">Obra:</td>
+                            <td class="boldBorder boldText center" colspan="3">
+                                <!-- <div t-if="doc.asunto_obra">
+                                    <p t-field="doc.asunto_obra"/>
+                                </div> -->
+                            </td>
+                            <td class="boldBorder boldText">Fecha</td>
+                            <td class="boldBorder boldText">
+                                <div t-if="doc.date_order">
+                                    <p t-field="doc.date_order" t-field-options="{'format': 'dd-MM-yyyy'}"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boldBorder boldText">O.T.:</td>
+                            <td class="boldBorder boldText">
+                                <div t-if="doc.ot_andamio">
+                                    <p t-field="doc.ot_andamio"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder boldText">P.O.:</td>
+                            <td class="boldBorder boldText">
+                                <div t-if="doc.scaffold_id.po_andamio">
+                                    <p t-field="doc.scaffold_id.po_andamio"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder boldText">Referencia</td>
+                            <td class="boldBorder boldText">
+                                <!-- <div t-if="doc.referencia">
+                                    <p t-field="doc.referencia"/>
+                                </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boldBorder boldText center" rowspan="2">Situación</td>
+                            <td class="boldBorder boldText center" rowspan="2" colspan="3">
+                                <!-- <div t-if="doc.zona">
+                                    <p t-field="doc.zona"/>
+                                </div> -->
+                            </td>
+                            <td class="boldBorder boldText">Supervisor:</td>
+                            <td class="boldBorder boldText">
+                                <!--<div t-if="doc.user_id">
+                                    <p t-field="doc.user_id"/>
+                                </div>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="boldBorder boldText">Super. Cliet.:</td>
+                            <td class="boldBorder boldText">
+                                <!-- <div t-if="doc.solicitante">
+                                    <p t-field="doc.solicitante"/>
+                                </div> -->
+                            </td>
+                        </tr>
+
+                        <tr class="center">
+                            <td class="boldBorder" colspan="3"> Servicio</td>
+                            <td class="boldBorder"> M3</td>
+                            <td class="boldBorder"> M3 a Facturar</td>
+                            <td class="boldBorder"> Precio M3</td>
+                            <td class="boldBorder"> Suma</td>
+                        </tr>
+
+                        <!--<t t-foreach="doc.lineas_andamio" t-as="line">
+                        <tr>
+                            <td colspan="3" class="center boldBorder"> <span t-field="line.nombre"/></td>
+
+                            <td class="right"> <span t-esc="'%.2f'%(line.m3)" /></td>
+                            <td class="right"><span t-esc="'%.2f'%(line.m3_a_facturar)" /> </td>
+                            <td class="right"><span t-esc="'%.2f'%(line.precio_m3)" />€ </td>
+                            <td class="right"><span t-esc="'%.2f'%(line.suma)" />€ </td>
+
+                        </tr>
+                        </t>-->
+
+
+                        <tr>
+                            <td rowspan="2" colspan="3" class="center boldBorder "> Alquiler Andamio</td>
+                            <td rowspan="2"> </td>
+                            <td> Fecha Montaje</td>
+                            <td> Fecha Desmontaje</td>
+                            <td rowspan="2"/>
+                        </tr>
+
+                        <tr>
+                            <td><![CDATA[&nbsp;]]>
+                            <!-- <div t-if="doc.fecha_montaje">
+                                        <p t-field="doc.fecha_montaje" t-field-options="{'format': 'dd-MM-yyyy'}"/>
+                                    </div> -->
+                            </td>
+                            <td><![CDATA[&nbsp;]]>
+                            <!-- <div t-if="doc.fecha_desmontaje">
+                                        <p t-field="doc.fecha_desmontaje" t-field-options="{'format': 'dd-MM-yyyy'}"/>
+                                    </div> -->
+                            </td>
+                        </tr>
+
+                        <tr class="boldBorder">
+                            <td colspan="7"> Observaciones:
+                                <!-- <div t-if="doc.observaciones_informe">
+                                    <p t-field="doc.observaciones_informe"/>
+                                </div> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </td>
+                        </tr>
+                        <tr class="center boldBorder">
+                            <td colspan="2">Firma Ateca <br/>  <br/> <br/> <br/> <br/> <br/></td>
+                            <td colspan="3">Conforme Cliente<br/><br/><br/><br/></td>
+                            <td class="boldText" colspan="2">Total  <br/><br/><br/>
+                                <!-- <div style="font-size: 16px;" t-if="doc.amount">
+                                    <p><span t-esc="'%.2f'%(doc.amount)"/>€
+                                    </p>
+                                </div> -->
+                                <br/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_informe_andamio">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="binhex_andamios_report.report_informe_andamio_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_informe_andamio_scaffold">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+            <t t-set= "doc" t-value="doc.task_id"/>
+                <t t-if="doc.is_parent">
+                    <t t-call="binhex_andamios_report.report_informe_andamio_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
