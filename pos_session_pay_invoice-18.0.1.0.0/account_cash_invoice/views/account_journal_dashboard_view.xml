@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_journal_dashboard_kanban_view_inherit_cash_invoice" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban.inherit.cash.invoice</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_manage_reconciliation')]" position="inside">
+                <t t-if="record.type.raw_value == 'cash'">
+                    <div>
+                        <a role="menuitem"
+                           type="action"
+                           name="%(action_cash_pay_invoice_from_statement)d"
+                           t-att-context="{'default_journal_id': record.id.raw_value}">
+                            Pay Invoice
+                        </a>
+                    </div>
+                </t>
+            </xpath>
+        </field>
+    </record>
+</odoo>
