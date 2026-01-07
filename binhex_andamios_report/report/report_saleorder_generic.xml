@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_generic_document">
+
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+            <div class="page">
+                <div class="reporte">
+                    <table>
+                        <tr>
+                            <td width="25%">
+                                <p align="center">
+                                    <b>
+                                        <t
+                                            t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                                            <span t-if="doc.state not in ['draft','sent']">Order # </span>
+                                            <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                                        </t>
+                                        <t
+                                            t-if="env.context.get('proforma', False) or is_pro_forma">
+                                            <span>Pro-Forma Invoice # </span>
+                                        </t>
+                                        <span t-field="doc.name" />
+                                    </b>
+
+                                </p>
+                            </td>
+                            <td width="50%" />
+                            <td width="30%">
+                                <p align="center">
+                                    <b>Client <span t-field="doc.partner_id" /><br />
+                                    </b>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <p>
+                        <span t-field="doc.introduccion"/>
+                    </p>
+                    <br />
+                    <div class="titulo">
+                        <h4>
+                            <b>
+                                <u>I. ECONOMIC SCOPE AND CONTENT OF THE OFFER</u>
+                            </b>
+                        </h4>
+                    </div>
+                    <br />
+                    <p>
+                        <span t-field="doc.alcance_contenido" />
+                    </p>
+                    <br />
+
+                    <table id="customers">
+                        <t t-foreach="doc.order_line" t-as="line">
+                            <span t-if="line.display_type == 'line_section'">
+                                <tr>
+                                    <th>
+                                        <span t-esc="line.display_name.upper()" />
+                                    </th>
+                                    <th>PRICE</th>
+                                </tr>
+                            </span>
+                            <span t-if="not line.display_type">
+                                <tr>
+                                    <td>
+                                        <span t-field="line.product_id.name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.price_subtotal" />
+                                    </td>
+                                </tr>
+                            </span>
+                        </t>
+                    </table>
+
+                    <br />
+                    <p>
+                        <span t-field="doc.servicio_minimo" />
+                    </p>
+                    <br />
+                    <div class="titulo">
+                        <h4>
+                            <b>
+                                <u>ANNEX 1. RATES OF TIME FOR ADMINISTRATION*</u>
+                            </b>
+                        </h4>
+                    </div>
+
+                    <div style="margin-left:20%;margin-right:20%;">
+                        <table
+                            style="border: 1px solid black; position:center ;margin-left:auto; margin-right:auto;border-collapse: collapse;"
+                            align="center">
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;" align="left">Time managment
+                                    operator on weekdays during normal business hours(7-15).
+                                    Minimum equipment (3 operators)</td>
+                            </tr>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;" align="left">Time
+                                    management operator on weekdays, out of hours or
+                                    overnight(15-7). Minimum equipment (3 operators)</td>
+                            </tr>
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;" align="left">Time
+                                    management operator on Saturdays, Sundays and holidays, in
+                                    extraordinary or night time. Minimum equipment (3 operators)</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <br />
+                    <div class="titulo">
+                        <h4>
+                            <b>
+                                <u>II. FORM AND PAYMENT</u>
+                            </b>
+                        </h4>
+
+                        <p>
+                            <span t-field="doc.forma_condiciones_pago" />
+                        </p>
+                    </div>
+                    <br />
+                    <div class="titulo">
+                        <h4>
+                            <b>
+                                <u>III. GENERAL CONDITIONS</u>
+                            </b>
+                        </h4>
+                    </div>
+                    <p>
+                        <span t-field="doc.condiciones_generales" />
+                    </p>
+                    <br />
+                    <div class="titulo">
+                        <h4>
+                            <b>
+                                <u>IV. COMPLIANCE AND ACCEPTANCE BY THE PARTIES</u>
+                            </b>
+                        </h4>
+                    </div>
+                    <p>
+                        <span t-field="doc.conforme_aceptacion_partes" />
+                    </p>
+
+                    <br />
+                    <br />
+                </div>
+
+                <p style="page-break-after:always;"> </p>
+
+                <t t-if="doc.contract">
+                    <div class="text-center">
+                        <h5>ANNEX GENERAL ATECA</h5>
+
+                        <table>
+
+                            <tr>
+                                <td width="45%">
+                                    <p align="justify" style="font-size: 9px !important;"><strong>A)
+                                        OFFER</strong><br /> 1. All the designs and / or sketches that
+                                        could accompany our offers are indicative and once the offer is
+                                        accepted, our company puts at your disposal our technical
+                                        department for any kind of doubt, consultation, clarification
+                                        that you wish to request. In the future our company will be
+                                        named as ATECA. 2. Unless otherwise agreed, the validity of the
+                                        ATECA offer is 30 calendar days. 3. Once this offer is accepted,
+                                        it will be valid during the year of its issuance. 4. ATECA
+                                        offers will be subject to acceptance. The acceptance of the
+                                        offer will result in the initiation of a contractual
+                                        relationship between <br /><strong>B)
+                                            MATERIALS</strong><br /> 1. The contracted material has been
+                                        previously chosen by the client at his convenience, who states
+                                        that he considers it suitable for the intended use 2. The
+                                        materials that are supplied for rent are property of ATECA, who
+                                        reserves the domain of them at all times. The assignment,
+                                        sublease or subrogation of the material in favor of third
+                                        parties is prohibited. The client becomes custodian of the
+                                        materials supplied from its arrival until its withdrawal by
+                                        ATECA. The client becomes custodian of the materials supplied
+                                        from their arrival until their withdrawal. It is totally
+                                        forbidden to assign or sublet the supplied materials, as well as
+                                        to transfer them to another work different from the one
+                                        specified in this contract. The customer will be responsible for
+                                        the supervision of the materials on the site, in terms of theft,
+                                        bad treatment, improper use, etc. In case of loss, deterioration
+                                        or theft of the material, it will be invoiced at the prices in
+                                        force in the general rate of ATECA, which is in force at the
+                                        time of the withdrawal of the material. The materials supplied
+                                        will be kept by the customer with the due diligence of
+                                        maintenance until their return, committing to deliver them in
+                                        the state in which they were received, responding in any case
+                                        the client regarding irreparable damages due to blows, crushing,
+                                        etc. or due to paint, cement, welding or rust. 3. Under the
+                                        regime of sale of material, the transfer of the property of the
+                                        merchandise will not occur until the full payment of the sale
+                                        that appears in the contract or offer accepted, since ATECA
+                                        reserves the domain of the merchandise supplied. For them the
+                                        sale is understood subject to suspensive condition. The place of
+                                        fulfillment of the contract is established in GRAN CANARIAS, in
+                                        the offices of ATECA., So any payment must be made in the
+                                        offices of ATECA in Gran Canarias and in the manner established
+                                        in the contract or offer accepted. 4. In the event that parts
+                                        other than those offered are supplied, either by modifications
+                                        or improvements in them, the elements actually supplied will be
+                                        invoiced at the current price, and the appropriate contract or
+                                        new acceptance of offer must be subscribed according to the new
+                                        materials effectively supplied, with full indemnity for ATECA <br /><strong>C)
+                                        PRECIOS</strong><br /> 1. All prices must be considered net, by
+                                        which they must be increased with the IGIC applied at all times
+                                        2. If, from the existence of the contractual relationship, up to
+                                        the delivery of the material, more than 90 calendar days, for
+                                        causes totally unrelated to ATECA, the price will be revised and
+                                        updated in accordance with the price list in force at the date
+                                        of delivery. <br /><strong>D) TRANSPORT</strong><br /> 1. The
+                                        client will indicate the place where the materials will be
+                                        supplied, being of his responsibility all the actions that may
+                                        derive from the place in which they are deposited, for the
+                                        damages that could cause them. 2. At the time of arrival of the
+                                        goods to the destination set by the customer, there must be
+                                        someone with sufficient powers of the client who can carry out
+                                        the receipt and sign the corresponding delivery notes. In the
+                                        event that no responsible or authorized person is present, the
+                                        parties expressly accept that the signature of the transporter
+                                        who makes the delivery will be sufficient for the merchandise
+                                        reflected in the delivery note to be understood as received. 3.
+                                        If the stockpile is more than 20m away from the pit, and has
+                                        been manually loaded, the corresponding transport will be
+                                        charged for <br /><strong>E) SUPPLY, SPACES AND
+                                            STOCKPILES</strong><br /> 1. The customer will specify the
+                                        place where they will be supplied and installed, where
+                                        appropriate, the materials, being their responsibility all
+                                        actions that may derive from the place where they are deposited
+                                        or installed, for any damage they may cause. 2. The client will
+                                        be responsible for the provision of the space required for
+                                        loading and unloading, as well as a storage area for the
+                                        material at the foot of the pit, having previously prepared the
+                                        corresponding permits or licenses and even the protection fences
+                                        if necessary. 3. The electrical supply, water, lifting of
+                                        materials with crane or other means of elevation and in general,
+                                        any general need for the assembly and disassembly of
+                                        scaffolding, will be at the customer's expense <br /><strong>F)
+                                        RENTALS</strong><br /> 1. With the provision of labor for hire
+                                        by ATECA, the rents will be accrued daily, from the start date
+                                        of the assembly until the completion of the dismantling, with a
+                                        minimum billing of 15 days. 2. With labor on behalf of the
+                                        client, the rents will accrue daily, from the date of departure
+                                        of the ULMA warehouse until the date of return to them, with a
+                                        minimum of 15 days invoicing <br /><strong>G) LABOR</strong><br />
+                                        1. Stop times not attributable to ATECA (inability to access
+                                        work, adverse weather conditions, obstacles or other trades
+                                        interfering in the pit, lack of electricity supply, lack of
+                                        minimum safety conditions, stop for safety reasons etc.) will be
+                                        billed by administration. 2. The work to be done with pipe and
+                                        clamp, as well as modifications and revisions of scaffolds
+                                        already installed, will be billed by administration. 3. It will
+                                        be for the client's account the adequacy of the implantation
+                                        area or any other previous operation that was necessary. 4. It
+                                        will be the customer's responsibility to keep the pit clean and
+                                        clear of other trades so that the haulage and assembly and
+                                        disassembly work can be carried out 5. Will be on behalf of the
+                                        client how many building permits, taxes, fees, permits for
+                                        occupation of sidewalk and roadway; facultative directions etc.
+                                        are necessary for the installation of contracted scaffolding <br /><strong>H)
+                                        ADVERTISING</strong><br /> 1. ATECA reserves the right placement
+                                        of own publicity or third in their scaffolding, not being able
+                                        to place some advertising without express authorization. Purpose
+                                        publication in advertising media of any kind limited period of
+                                        time and in any country in the world and their transfer to third
+                                        parties. <br /><strong>P)
+                                            CONTENCIUS CLAUSES</strong><br /> 1. Failure to comply with
+                                        these General Conditions and, in particular, the form, deadline
+                                        or conditions of payment established in the attached offer
+                                        accepted, will be sufficient reasons to terminate this contract,
+                                        and ATECA will be able to dispose of its materials without prior
+                                        request to the client, and without prejudice to any subsequent
+                                        claims that may arise; so with the signing of the contract or
+                                        offer is authorized by the client to ATECA at the entrance to
+                                        the place where the scaffolds are located and proceed to its
+                                        disassembly and removal, but may choose ATECA not to perform the
+                                        dismantling of materials or scaffolding until the customer is
+                                        aware of their payment obligations. In this case, and until its
+                                        cash payment, will continue accruing to ATECA all the concepts
+                                        and prices provided in the contract or offer accepted, with the
+                                        corresponding legal interests of delay, increasing billing
+                                        accordingly until full payment or settlement 2. Likewise, ATECA
+                                        will have the right to be indemnified by the client, for all
+                                        those damages and losses of any kind that, as a consequence of
+                                        the contractual breach of this, they had irrigated. 3. If the
+                                        client decides under his exclusive responsibility and with full
+                                        indemnity for ATECA, perform at his sole account and charge,
+                                        dismantling, loading and unloading, and delivery to the ULMA
+                                        stores of the contracted materials, ATECA will be bound to his
+                                        receipt provided that at the same time the delivery is made
+                                        effective by that established in the contract or offer accepted
+                                        and in accordance with the general conditions, must be
+                                        subscribed, if there is agreement between the parties, document
+                                        or record of receipt, signed and dated in accordance with both
+                                        parties 4. In the event that any condition was or became invalid
+                                        or unacceptable, it will not affect the validity of the other
+                                        conditions.</p>
+                                </td>
+
+                                <td width="5%" />
+
+                                <td width="45%">
+                                    <p align="justify" style="font-size: 9px !important;">
+                                        <strong>I) DEADLINES</strong><br /> 1. Deadlines
+                                        supply and / or workmanship: The delivery and / or initial
+                                        assembly will generally, unless otherwise that it is agreed,
+                                        5 working days from the date of acceptance of the offer
+                                        signed by the client. In case of sale of materials shall be
+                                        fixed by agreement between the parties. 2.Ampliaciones Order
+                                        If necessary supply and / or install materials not included
+                                        in the forecasts of the initial offer, the customer must
+                                        apply in writing to ATECA, these being subject to price
+                                        increases hand, must first accept the budget to proceed with
+                                        the delivery and / or enforcement of work. The terms of
+                                        these expansions, unless otherwise conviniese shall be
+                                        governed by the same conditions as in the initial act or
+                                        general conditions. <br /><strong>J)SAFETY AND OCCUPATIONAL
+                                        HAZARD PREVENTION</strong><br /> 1. Will customer paid
+                                        employment development, processing and disposal of the
+                                        Health and Safety Plan the work, as well as all measures and
+                                        means of collective protection before, during and after
+                                        installation - dismantling of scaffolding, such as fences,
+                                        nets, lifelines etc., to avoid possible damage to people in
+                                        the third and work. 2. Both periodic reviews and inspections
+                                        of scaffolding to respect the RD 2177/2004, shall be borne
+                                        by the customer and, unless these services are contracted
+                                        ATECA, in which case they must be explicitly reflected and
+                                        accepted by the customer in the offer. 3.ATECA is exonerated
+                                        by the customer for any obligations Toiletry at Work and in
+                                        general all that in those established by law, as well as on
+                                        any claim of any kind and origin may occur by reason of
+                                        improper use by the customer or third party materials
+                                        supplied. 4. unauthorized materials handling site
+                                        installation and removal of any structuring element of the
+                                        scaffold is prohibited. 5. ATECA declines all responsibility
+                                        if modified in whole or in part the structure without the
+                                        supervision of a technical or particular ATECA decline any
+                                        responsibility for failures due to moorings that have been
+                                        unleashed, skirts and rails that will not be moving at once
+                                        the platforms by any user or modification of any element of
+                                        the scaffold, see diagonal, pipes, beams, etc. 6. You need
+                                        to get in immediate knowledge of ATECA, any identified on
+                                        the scaffold in order to proceed to its correction.
+                                        Otherwise, this assumes its responsibility in case of
+                                        accident. 7. Any damage caused during the performance of the
+                                        work contracted to ATECA and could be attributed to it, must
+                                        be communicated in writing to the company within a period of
+                                        24 hours, after which ATECA disclaims all liability. 8. It
+                                        shall be the duty of the client company have the
+                                        corresponding liability policy, to address the personal and
+                                        property damage at any time and lower your liability may
+                                        arise. <br /><strong>K) PAYMENT CONDITIONS</strong><br /> 1.
+                                        Failure to comply with the payment terms set out in the
+                                        contract automatically lead the charge default interest to
+                                        the legal rate established by law. 2. If the customer before
+                                        pay the full purchase price of the materials were to be in a
+                                        state of bankruptcy or insolvency, shall immediately notify
+                                        their situation ATECA and put with knowledge of the
+                                        competent court retention of title existing on the contract
+                                        goods. 3. In the event that the buyer wishes to sell the
+                                        goods supplied to third title reservation before full
+                                        payment, shall first notify ATECA, and pay ATECA in any
+                                        event, prior to transmission, the slope of the payment of
+                                        the purchase price. However, with the third parties that
+                                        sought to acquire, may reach an agreement to be concluded in
+                                        writing, by which the payment is implemented by the third
+                                        party acquirer to ATECA debt. L) CLAIMS 1. In the event that
+                                        a claim for defects in the goods, ATECA occurs, may at his
+                                        discretion and choice, podrecer to repair or correction or
+                                        replacement of damaged merchandise other in perfect
+                                        condition. <br /><strong>M) SEVERANCE</strong><br /> 1. In
+                                        case of sale of materials, compensation in the event of
+                                        hardware sales, any compensation that may correspond to the
+                                        customer for material on such materials as a result of
+                                        hidden defects is limited to the value which the object
+                                        supplied before being supplied by first time. Any other
+                                        superior claim, or affecting other objects, properties or
+                                        persons is expressly prohibited. <br /><strong>N) GUARANTEES</strong><br />
+                                        1. All products reviewed on offer are for professional use.
+                                        2. The guarantee scheme for the sale of the product is 12
+                                        months, during which ATECA, undertakes to solve any
+                                        manufacturing defect at no cost to the customer. 3. As ATECA
+                                        not have any involvement in the assembly, disassembly,
+                                        assembly supervision or direction of the materials provided,
+                                        ATECA, it is not liable for any damage that might cause such
+                                        tasks. By the nature of the product application manuals use
+                                        of our products is recommended. 4. It is also not liable for
+                                        any damages arising from the joint use of other items not
+                                        supplied by ATECA, or misuse of material. 5. Studies
+                                        (technical drawings, specifications, structural analysis,
+                                        etc.) and visits to work that could make your staff Dept. Of
+                                        Engineering, will be specifically aimed at advising the
+                                        client. These studies will be applied directly by the client
+                                        ATECA, but must be authenticated and therefore, undertaken
+                                        by an installer or by the technical direction of the work,
+                                        with technical corrections that consider technical or
+                                        project management convenient, not assuming ATECA, liability
+                                        arising therefrom, unless they are expressly hired ATECA
+                                        customer technical professional services or project
+                                        management, in which case they must be explicitly reflected
+                                        and accepted by the customer in the offer. <br /><strong>
+                                        O)PRIVACY</strong><br /> 1. Customer expressly authorizes
+                                        ATECA is processed, stored and analyzed on computer any
+                                        personal data arising out of trade relations between both
+                                        parties in compliance with the Data Protection Act 2. The
+                                        client assigns to ATECA copyright and image derived from the
+                                        photographs and recordings of his property that are related
+                                        to the commercial link between ATECA and client for the
+                                        following the invalid or unenforceable condition
+                                        retroactively by an invalid or unenforceable provision that
+                                        approximates as much as possible to the economic purpose of
+                                        the invalid or unenforceable condition. 5. The General
+                                        Conditions are an integral and inseparable part of the
+                                        contract or offer accepted by the Economic and individuals
+                                        that subscribed in each case between ATECA and client
+                                        conditions are established, and shall be without prejudice
+                                        to the established therein, to prevail in any case the
+                                        particular conditions of each offer. 6. For any dispute
+                                        arising in relation to breach or interpretation of the
+                                        contract, shall be competent courts of Las Palmas or
+                                        relevant province, giving the buyer expressly their own
+                                        jurisdiction, which in his case could <br /><strong>Q)
+                                        MEASUREMENT CRITERIA</strong><br /> 1. The volume of
+                                        structures is calculated by taking the measures the width,
+                                        height and depth of the scaffold, the height distance from
+                                        the base to the top of the scaffold and being the minimum
+                                        requirement for any magnitude 1.00 m in height and depth of
+                                        the scaffold. 2. flown scaffolding be considered as the
+                                        height of the scaffold itself, plus 1/2 of the distance to
+                                        the ground 3. To carry out maintenance, modifications,
+                                        repairs and other work hard to assess rates will be used for
+                                        administration jobs 4. Case of needing visas, these will be
+                                        borne by the customer 5. In those scaffolds where the use of
+                                        plastic wheels is required this will be charged as rent at a
+                                        rate of € 1.00 / day wheel 6. It is considered as a minimum
+                                        measure linear 1m 7. In mobile towers holidays 1 € / day
+                                        applies wheel 8. mounted at a height of 10 meters or more
+                                        scaffolds, are subject to a 15% increase in the actual
+                                        volume mounted. 9. If scaffolding is assembled or
+                                        disassembled at night were added to the billing by 15% over
+                                        the full extent of it. 10.If the scaffold is in a confined
+                                        space will have an increase of 15% in the full measure of
+                                        it. </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br />
+                        <br />
+                    </div>
+                </t>
+
+            </div>
+        </t>
+
+    </template>
+
+
+    <template id="report_saleorder_generic">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="binhex_andamios_report.report_saleorder_generic_document"
+                    t-lang="doc.partner_id.lang" />
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

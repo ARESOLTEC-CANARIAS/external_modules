@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <!--<report 
+                id="action_report_original_task"
+                string="Resumen Andamios"
+                model="project.task" 
+                report_type="qweb-pdf"
+                file="binhex_andamios_report.report_original_project_task" 
+                name="binhex_andamios_report.report_original_project_task"
+                />
+
+            <report 
+                id="action_report_original_task_scaffold"
+                string="Resumen Andamios"
+                model="scaffold.scaffold" 
+                report_type="qweb-pdf"
+                file="binhex_andamios_report.report_original_project_task_scaffold" 
+                name="binhex_andamios_report.report_original_project_task_scaffold"
+                />-->
+    </data>
+</odoo>
