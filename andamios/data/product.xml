@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="binhex_scaffold" model="product.template">
+            <field name="name">Scaffold</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">consu</field>
+            <field name="uom_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="uom_po_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="invoice_policy">order</field>
+        </record>
+
+        <record id="binhex_product_uom_day_cubic_meters" model="uom.uom">
+            <field name="category_id" ref="uom.uom_categ_wtime"/>
+            <field name="name">Days x M3</field>
+            <field name="factor" eval="1.0"/>
+            <field name="uom_type">bigger</field>
+        </record>
+
+        <record id="binhex_scaffold_assembly" model="product.template">
+            <field name="name">Scaffold assembly</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="scaffold_service_type">assembly</field>
+            <field name="uom_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="uom_po_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="service_policy">delivered_manual</field>
+            <!-- <field name="service_tracking">task_in_project</field> -->
+        </record>
+
+        <record id="binhex_scaffold_disassembly" model="product.template">
+            <field name="name">Scaffold disassembly</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="scaffold_service_type">disassembly</field>
+            <field name="uom_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="uom_po_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="service_policy">delivered_manual</field>
+            <!-- <field name="service_tracking">task_in_project</field> -->
+        </record>
+
+        <record id="binhex_scaffold_renting" model="product.template">
+            <field name="name">Scaffold renting</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="scaffold_service_type">renting</field>
+            <field name="uom_id" ref="uom.product_uom_day"/>
+            <field name="uom_po_id" ref="uom.product_uom_day"/>
+            <field name="service_policy">delivered_manual</field>
+            <field name="service_tracking">no</field>
+            <field name="must_have_dates">True</field>
+            <field name="rented_product_tmpl_id" ref="binhex_scaffold"/>
+        </record>
+
+        <record id="binhex_scaffold_extension" model="product.template">
+            <field name="name">Scaffold extension</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="scaffold_service_type">extension</field>
+            <field name="uom_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="uom_po_id" ref="uom.product_uom_cubic_meter"/>
+            <field name="service_policy">delivered_manual</field>
+            <!-- <field name="service_tracking">task_in_project</field> -->
+        </record>
+
+        <!-- <function model="res.company" name="_set_addon_settings"/>
+        <function model="res.config.settings" name="_set_config_settings"/> -->
+    </data>
+</odoo>

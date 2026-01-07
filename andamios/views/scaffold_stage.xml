@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="binhex_scaffold_stages">
+      <field name="name">binhex.scaffold.stages</field>
+      <field name="model">scaffold.stage</field>
+      <field name="arch" type="xml">
+        <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+        </list>
+      </field>
+    </record>
+
+    </data>
+</odoo>

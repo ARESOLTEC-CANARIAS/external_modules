@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <record id="scaffold_res_partner_view_button" model="ir.ui.view">
+        <field name="name">scaffold.res.partner.view.button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button 
+                    name="action_show_andamios_treeview" 
+                    type="object" class="oe_stat_button" 
+                    icon="fa-cubes icon">                                                
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">                                
+                                <field name="andamio_ids_size" widget="statinfo" string="Andamios"/>
+                            </span>
+                            <span class="o_stat_text">Scaffolds</span>
+                        </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</data>
+</odoo>    
