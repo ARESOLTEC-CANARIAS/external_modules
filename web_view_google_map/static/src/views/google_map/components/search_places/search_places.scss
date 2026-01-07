@@ -1,0 +1,12 @@
+.o_google_map_view {
+    .google_search_places {
+        margin-top: 10px;
+        margin-right: 10px;
+        width: 300px;
+        position: fixed;
+    }
+    gmp-place-autocomplete{
+        width: 300px;
+        border: none !important;
+    }
+}
