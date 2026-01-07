@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="google_map_scaffold.MarkerInfoWindow" t-inherit="web_view_google_map.MarkerInfoWindow" t-inherit-mode="primary">
+       <xpath expr="//div[hasclass('o_kanban_record_subtitle')]" position="after">
+           <div class="o_google_map_marker_info">
+               <t t-out="description" t-if="description"/>
+           </div>
+       </xpath>
+    </t>
+</templates>
