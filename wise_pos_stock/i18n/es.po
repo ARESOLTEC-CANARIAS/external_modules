@@ -1,0 +1,156 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following module:
+# 	* wise_pos_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-11 11:09+0000\n"
+"PO-Revision-Date: 2026-01-11 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models/pos_config.py:33
+msgid "Color displayed for products with low stock levels."
+msgstr "Color mostrado para productos con niveles de stock bajos."
+
+#: models/pos_config.py:36
+msgid "Color displayed for products with sufficient stock levels."
+msgstr "Color mostrado para productos con stock suficiente."
+
+#: static/src/app/overrides/screens/product_screen/product_screen.js:183
+msgid "Connection to the server has been lost. Please check your internet connection."
+msgstr "Se ha perdido la conexión con el servidor. Comprueba tu conexión a internet."
+
+#: models/res_config_settings.py:50
+#: models/pos_config.py:49
+msgid "Default Source Location"
+msgstr "Ubicación de origen por defecto"
+
+#: models/res_config_settings.py:53
+#: models/pos_config.py:52
+msgid "Default Source Location id"
+msgstr "ID de la ubicación de origen por defecto"
+
+#: models/res_config_settings.py:16
+#: models/pos_config.py:12
+#: views/res_config_settings_views.xml:25
+msgid "Display Stock"
+msgstr "Mostrar stock"
+
+#: models/pos_config.py:12
+msgid "Display Stock in POS"
+msgstr "Mostrar stock en TPV"
+
+#: models/res_config_settings.py:21
+#: models/pos_config.py:15
+#: views/res_config_settings_views.xml:41
+msgid "Display Total Variant Stock on Product Card"
+msgstr "Mostrar el stock total de variantes en la tarjeta del producto"
+
+#: models/pos_config.py:12
+msgid "Enable if you want to show stock of products"
+msgstr "Activa si quieres mostrar el stock de los productos."
+
+#: models/pos_config.py:24
+#: views/res_config_settings_views.xml:47
+msgid "Enable to display products with low stock levels on the POS screen"
+msgstr "Activa para resaltar/mostrar productos con stock bajo en la pantalla del TPV."
+
+#: views/res_config_settings_views.xml:25
+msgid "Enable to show the stock on the product card"
+msgstr "Activa para mostrar el stock en la tarjeta del producto."
+
+#: models/pos_config.py:15
+#: views/res_config_settings_views.xml:41
+msgid "Enable to show the total available stock (sum of all variants) on the product card in the POS screen. If disabled, stock per variant will be displayed individually."
+msgstr "Activa para mostrar el stock disponible total (suma de todas las variantes). Si se desactiva, se mostrará el stock por variante."
+
+#: static/src/app/overrides/screens/product_screen/product_screen.js:181
+msgid "Failure to load product"
+msgstr "Error al cargar el producto"
+
+#: models/pos_config.py:36
+msgid "In Stock Color"
+msgstr "Color con stock"
+
+#: static/src/app/overrides/screens/product_screen/product_screen.js:208
+#: static/src/app/overrides/screens/product_screen/order-summary/order-summary.js:39
+#: static/src/app/overrides/screens/payment_screen/payment_screen.js:23
+msgid "Insufficient Stock"
+msgstr "Stock insuficiente"
+
+#: models/pos_config.py:33
+msgid "Low Stock Color"
+msgstr "Color de stock bajo"
+
+#: models/pos_config.py:25
+#: views/res_config_settings_views.xml:47
+msgid "Low Stock Products Screen"
+msgstr "Pantalla de productos con stock bajo"
+
+#: models/res_config_settings.py:43
+#: models/pos_config.py:42
+msgid "Refresh Time"
+msgstr "Tiempo de refresco"
+
+#: models/res_config_settings.py:28
+#: models/pos_config.py:21
+#: views/res_config_settings_views.xml:44
+msgid "Restrict Product Out of Stock"
+msgstr "Restringir productos sin stock"
+
+#: models/pos_config.py:21
+msgid "Restrict Product Out of Stock in POS"
+msgstr "Restringir productos sin stock en TPV"
+
+#: models/pos_config.py:20
+#: views/res_config_settings_views.xml:44
+msgid "Restrict ordering of out-of-stock products based on displayed quantity"
+msgstr "Restringe la venta de productos sin stock según la cantidad mostrada."
+
+#: models/res_config_settings.py:43
+#: models/pos_config.py:42
+msgid "Select the interval to refresh stock quantities on the product screen"
+msgstr "Selecciona el intervalo para actualizar las cantidades de stock en la pantalla de productos."
+
+#: models/res_config_settings.py:47
+#: models/pos_config.py:46
+#: views/res_config_settings_views.xml:56
+msgid "Select the warehouse to manage inventory for this point of sale"
+msgstr "Selecciona el almacén para gestionar el inventario de este punto de venta."
+
+#: models/res_config_settings.py:25
+#: models/pos_config.py:18
+msgid "Select to show on-hand and forecasted stock on the POS screen"
+msgstr "Selecciona para mostrar el stock a mano y el stock previsto en la pantalla del TPV."
+
+#: views/res_config_settings_views.xml:38
+msgid "Select to show on-hand or forecasted stock on the POS screen"
+msgstr "Selecciona si quieres mostrar el stock a mano o el stock previsto en la pantalla del TPV."
+
+#: views/res_config_settings_views.xml:24
+msgid "Stock Configuration"
+msgstr "Configuración de stock"
+
+#: models/res_config_settings.py:25
+#: models/pos_config.py:18
+msgid "Stock Type"
+msgstr "Tipo de stock"
+
+#: static/src/app/overrides/screens/product_screen/product_screen.js:210
+#: static/src/app/overrides/screens/product_screen/order-summary/order-summary.js:41
+#: static/src/app/overrides/screens/payment_screen/payment_screen.js:25
+msgid "The quantity entered exceeds the available stock. Please enter a quantity less than or equal to the available stock."
+msgstr "La cantidad introducida supera el stock disponible. Introduce una cantidad menor o igual al stock disponible."
+
+#: models/res_config_settings.py:46
+#: models/pos_config.py:46
+#: views/res_config_settings_views.xml:56
+msgid "Warehouse Location"
+msgstr "Ubicación de almacén"
