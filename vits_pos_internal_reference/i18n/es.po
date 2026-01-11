@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following module:
+# 	* your_module_name
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0
+"
+"Report-Msgid-Bugs-To: 
+"
+"POT-Creation-Date: 2026-01-11 10:58+0000
+"
+"PO-Revision-Date: 2026-01-11 10:58+0000
+"
+"Last-Translator: 
+"
+"Language-Team: 
+"
+"Language: es
+"
+"MIME-Version: 1.0
+"
+"Content-Type: text/plain; charset=UTF-8
+"
+"Content-Transfer-Encoding: 8bit
+"
+
+#. module: your_module_name
+#: res_config_settings.xml:18
+msgid "Allow Default Code on Order Receipt"
+msgstr "Permitir mostrar la referencia interna en el ticket"
+
+#. module: your_module_name
+#: res_config_settings.py:24
+msgid "Product Default Code on POS Screen"
+msgstr "Referencia interna del producto en la pantalla del TPV"
+
+#. module: your_module_name
+#: res_config_settings.py:25
+msgid "Product Default Code on Order Receipt"
+msgstr "Referencia interna del producto en el ticket"

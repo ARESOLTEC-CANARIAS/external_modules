@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Author      : Varanval IT Solutions
+    Copyright   : (c) 2025 Varanval IT Solutions. All Rights Reserved.
+    License     : Odoo Proprietary License v1.0 (OPL-1)
+-->
+<odoo>
+    <record id="vits_pos_product_default_code" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos_product_default_code</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='restaurant_section']" position="after">
+                <block title="POS Product Default Code">
+                    <setting string="Allow Default Code on Pos Screen">
+                        <field name="allow_default_code_pos_screen"/>
+                    </setting>
+                    <setting string="Allow Default Code on Order Receipt">
+                        <field name="allow_default_code_receipt"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
