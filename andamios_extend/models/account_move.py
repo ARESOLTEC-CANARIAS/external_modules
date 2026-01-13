@@ -180,7 +180,15 @@ class AccountMove(models.Model):
     def _create_move_lines(self, record=False):
         if not record:
             record = self
-        for task in record.cubic_meters_tasks.sorted(key=lambda r: r.parent_id.id):
+        if isinstance(record, models.BaseModel):
+            tasks = record.cubic_meters_tasks.sorted(key=lambda r: r.parent_id.id)
+        else:
+            tasks = record.get('cubic_meters_tasks', False)
+            if tasks:
+                tasks = self.env['project.task'].browse(tasks).sorted(key=lambda r: r.parent_id.id)
+            else:
+                tasks = []
+        for task in tasks:
             if not record.invoice_line_ids.filtered(
                 lambda i : i.display_type == 'line_section' and i.name == task.name
             ):
