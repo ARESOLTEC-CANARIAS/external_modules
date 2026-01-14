@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_parte_unico_document" inherit_id="binhex_andamios_report.report_parte_unico_document">
+            <xpath expr="//t[contains(@t-foreach, 'doc.timesheet_ids')]" position="replace">
+                <t t-foreach="doc.get_timesheets_for_report()" t-as="line">
+                    <tr class="center">
+                        <td class="boldBorder left" colspan="5">&amp;nbsp;<span t-if="line['name']" t-esc="line['name']"/></td>
+                        <td class="boldBorder left" colspan="4"><span style="padding-left: 5px" t-field="line['subtask'].task_type"/></td>
+                        <td class="boldBorder right"> <span t-esc="'%.2f'%(line['normal_hour'])"/>&amp;nbsp; </td>
+                        <td class="boldBorder right"> <span t-esc="'%.2f'%(line['extra_hour'])"/>&amp;nbsp; </td>
+                        <td class="boldBorder right">
+                            <div t-if="is_valorated">
+                                <span t-esc="str('%.2f'%(line['normal_hour_price'])) + ' €/h'"/>
+                            </div>
+                        </td>
+                        <td class="boldBorder right">
+                            <div t-if="is_valorated">
+                                <span t-esc="str('%.2f'%(line['extra_hour_price'])) + ' €/h'"/>
+                            </div>
+                        </td>
+                        <td class="boldBorder right" colspan="2">
+                            <div t-if="is_valorated">
+                                <span t-esc="'%.2f'%(line['total'])"/>€&amp;nbsp;
+                            </div>
+                        </td>
+                    </tr>
+                    <t t-set="i" t-value="i+1"/>
+                    <t t-set="total_timesheet" t-value="total_timesheet + float(line['total'])"/>
+                </t>
+            </xpath>
+            <xpath expr="//span[contains(@t-if, 'doc.id')][1]" position="replace">
+                <span t-if="doc.name">
+                    <span style="padding-left: 5px" t-field="doc.name"/>
+                </span>
+            </xpath>
+            <xpath expr="//t[contains(@t-if,'doc.material_ids')]" position="replace">
+                <t t-if="doc.material_ids">
+                    <t t-foreach="doc.material_ids" t-as="material">
+                            <tr class="center">
+                                <td colspan="2" class="boldBorder left">
+                                    <span t-esc="material.product_id._get_customer_product_code(doc.scaffold_id.client_id.id, material.quantity)"/>
+                                </td>
+                                <td colspan="4" class="boldBorder left" >&amp;nbsp;<span t-field="material.product_id.name"/>&amp;nbsp; </td>
+                                <td colspan="3" class="boldBorder left" >&amp;nbsp; <span t-field="material.product_id.categ_id"/>&amp;nbsp; </td>
+                                <td colspan="2" class="boldBorder right" > <span t-esc="str('%s %s'%(material.quantity,material.product_id.uom_id.name))"/>&amp;nbsp; </td>
+
+                                <td colspan="2" class="boldBorder right">
+                                    <div t-if="is_valorated">
+                                        <span t-esc="str('%.2f €/%s'%(material.price,material.product_id.uom_id.name))"/>&amp;nbsp;
+                                    </div>
+                                </td>
+
+                                <td colspan="2" class="boldBorder right" >
+                                    <div t-if="is_valorated">
+                                        <span t-esc="str('%.2f €'%(material.price_subtotal))"/>&amp;nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            <t t-set="total_services" t-value="total_services + material.price_subtotal"/>
+                            <t t-set="i" t-value="i+1"/>
+                    </t>
+                </t>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_timesheet)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_services)')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_andamios)')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%((total_timesheet + total_services + total_andamios))')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * subtask.cubic_meters)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * float(subtask.count_days_rent()) * subtask.cubic_meters)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic())')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * float(subtask.cubic_meters))')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+
+            <xpath expr="//tr[hasclass('o_service_body')]//td[@name='reference']" position="inside">
+                <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+            </xpath>
+
+            <xpath expr="//tr[hasclass('o_service_body_renting_1')]//td[@name='reference']" position="inside">
+                <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+            </xpath>
+
+        </template>
+
+        <template id="report_parte_unico_document_selection" inherit_id="binhex_andamios_report.report_parte_unico_document_selection">
+            <xpath expr="//t[contains(@t-foreach, 'doc.timesheet_ids')]" position="replace">
+                <t t-foreach="doc.parent_id.get_timesheets_for_report()" t-as="line">
+                    <t t-if="line['subtask'].task_type == doc.task_type">
+                        <tr class="center">
+                            <td class="boldBorder left" colspan="5">&amp;nbsp;<span t-if="line['name']" t-esc="line['name']"/></td>
+                            <td class="boldBorder left" colspan="4"><span style="padding-left: 5px" t-field="line['subtask'].task_type"/></td>
+                            <td class="boldBorder right"> <span t-esc="'%.2f'%(line['normal_hour'])"/>&amp;nbsp; </td>
+                            <td class="boldBorder right"> <span t-esc="'%.2f'%(line['extra_hour'])"/>&amp;nbsp; </td>
+                            <td class="boldBorder right">
+                                <div t-if="is_valorated">
+                                    <span  t-esc="str('%.2f'%(line['normal_hour_price'])) + ' €/h'"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder right">
+                                <div t-if="is_valorated" >
+                                    <span t-esc="str('%.2f'%(line['extra_hour_price'])) + ' €/h'"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder right" colspan="2">
+                                <div t-if="is_valorated">
+                                    <span  t-esc="'%.2f'%(line['total'])"/>€&amp;nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <t t-set="i" t-value="i+1"/>
+                        <t t-set="total_timesheet" t-value="total_timesheet + float(line['total'])"/>
+                    </t>
+                </t>
+            </xpath>
+            <xpath expr="//span[contains(@t-if, 'doc.id')][1]" position="replace">
+                <span t-if="doc.name">
+                    <span style="padding-left: 5px" t-field="doc.name"/>
+                </span>
+            </xpath>
+            <xpath expr="//t[contains(@t-if,'doc.material_ids')]" position="replace">
+                <t t-if="doc.material_ids">
+                    <t t-foreach="doc.material_ids" t-as="material">
+                        <t t-if="material.subtask_id.task_type == doc.task_type">
+                            <tr class="center">
+                                <td class="boldBorder center" colspan="2">
+                                    <span t-esc="material.product_id._get_customer_product_code(doc.scaffold_id.client_id.id, material.quantity)"/>
+                                </td>
+                                <td colspan="4" class="boldBorder left">&amp;nbsp;<span t-field="material.product_id.name"/>&amp;nbsp; </td>
+                                <td colspan="3" class="boldBorder left">&amp;nbsp; <span t-field="material.product_id.categ_id"/>&amp;nbsp; </td>
+                                <td colspan="2" class="boldBorder right"> <span t-esc="str('%s %s'%(material.quantity,material.product_id.uom_id.name))"/>&amp;nbsp; </td>
+
+                                <td colspan="2" class="boldBorder right">
+                                    <div t-if="is_valorated">
+                                        <span t-esc="str('%.2f €/%s'%(material.price,material.product_id.uom_id.name))"/>&amp;nbsp;
+                                    </div>
+                                </td>
+                                <td colspan="2" class="boldBorder right">
+                                    <div t-if="is_valorated">
+                                        <span t-esc="str('%.2f €'%(material.price_subtotal))"/>&amp;nbsp;
+                                    </div>
+                                </td>
+                            </tr>
+                            <t t-set="total_services" t-value="total_services + material.price_subtotal"/>
+                            <t t-set="i" t-value="i+1"/>
+                        </t>
+                    </t>
+                </t>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_timesheet)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_services)')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(total_andamios)')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%((total_timesheet + total_services + total_andamios))')]" position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * subtask.cubic_meters)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * float(subtask.count_days_rent()) * subtask.cubic_meters)')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic())')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@t-esc, '%(subtask.get_right_tariff_price_cubic() * float(subtask.cubic_meters))')]/.." position="attributes">
+                <attribute name="t-if">is_valorated</attribute>
+            </xpath>
+
+             <xpath expr="//tr[hasclass('o_service_body')]//td[@name='reference']" position="inside">
+                <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+            </xpath>
+
+            <xpath expr="//tr[hasclass('o_service_body_renting_1')]//td[@name='reference']" position="inside">
+                <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

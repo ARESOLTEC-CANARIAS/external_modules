@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="binhex_normal_hour_operator" model="product.product">
+            <field name="name">Normal hour operator</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="uom.product_uom_hour"/>
+            <field name="uom_po_id" ref="uom.product_uom_hour"/>
+            <field name="service_policy">delivered_manual</field>
+        </record>
+        <record id="binhex_extra_hour_operator" model="product.product">
+            <field name="name">Extra hour operator</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="uom.product_uom_hour"/>
+            <field name="uom_po_id" ref="uom.product_uom_hour"/>
+            <field name="service_policy">delivered_manual</field>
+        </record>
+    </data>
+</odoo>
