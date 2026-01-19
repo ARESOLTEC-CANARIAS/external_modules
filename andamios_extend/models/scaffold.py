@@ -29,7 +29,7 @@ class Scaffold(models.Model):
 
     @api.model
     def _get_product_pricelist(self, pricelist, product, qty, partner):
-        return pricelist._get_product_price(product, qty, partner)
+        return pricelist._get_product_price(product, quantity=qty, partner=partner)
 
     @api.depends('order_ids.order_line', 'pricelist_id', 'cubic_meters')
     def _compute_prices(self):
