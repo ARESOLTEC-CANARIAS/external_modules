@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_scaffold_partial_report,scaffold_partial_report,andamios_extend.model_scaffold_partial_report_wizard,base.group_user,1,1,1,1
+access_create_account_analytic_line,access.create.account.analytic.line,andamios_extend.model_create_account_analytic_line_wizard,base.group_user,1,1,1,1
+access_scaffold_tag_all,scaffold_tag_all,model_scaffold_tag,base.group_user,1,1,1,1
+access_project_task_time,access.project.task.time,model_project_task_time,base.group_user,1,1,1,1

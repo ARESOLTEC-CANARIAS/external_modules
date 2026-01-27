@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="andamios_extend.partial_part_document">
+            <t t-call="web.basic_layout">
+                <div class="">
+        <style>
+
+        table {
+            font-size: 15px;
+        border-collapse: collapse;
+        }
+
+
+        table, th, td {
+        border: 1px solid black;
+        }
+            .boldBorder{
+                border: 1px solid black;
+
+            }
+
+        .reporte{
+                        margin-left 0px;
+                        margin-right:0px;
+                        }
+        .tableAll {
+                width: 900px;
+
+            }
+            .center{
+                text-align: center;
+            }
+
+            .right{
+                text-align: right;
+            }
+
+            .boldText{
+                font-weight: bold;
+
+            }
+
+
+        table {
+        border-collapse: collapse;
+        }
+
+
+        table, th, td {
+        border: 1px solid black;
+        }
+            .boldBorder{
+                border: 1px solid black;
+
+            }
+            .boldBorder2{
+                border: 1px solid black;
+
+            }
+        .tableAll {
+                width: 900px;
+
+            }
+            .center{
+                text-align: center;
+            }
+
+            .right{
+                text-align: right;
+            }
+
+            .left{
+                text-align: left;
+            }
+
+
+            .boldText{
+                font-weight: bold;
+
+            }
+            .yellow{
+                background-color: rgb(255, 255, 130);
+            }
+
+
+        .padding {
+            padding-top: 1;
+            padding-bottom:3;
+            }
+        </style>
+
+                <div class="">
+                <t t-set="Nlines" t-value="8"> </t>
+
+        <table class="tableAll boldBorder">
+
+    <tr>
+    <td class="boldBorder center boldText padding" rowspan="5"> <br/>  <img t-attf-src="data:image/*;base64,{{doc.user_id.company_id.logo}}" width="150" height="100"/></td>
+        <td class="boldBorder boldText center" colspan="6">CONTROL PARTE DIARIO DE TRABAJO</td>
+
+    </tr>
+    <tr>
+        <td class="boldBorder boldText" style="padding-left: 5px;" colspan="1">Parte Nº:</td>
+        <td class="boldBorder boldText" colspan="2">
+                <span t-if="doc.name">
+                    <span style="padding-left: 5px" t-field="doc.name"/>
+                </span>
+        </td>
+
+        <td class="boldBorder boldText" style="padding-left: 5px;" colspan="1">Cliente:</td>
+        <td class="boldBorder boldText" colspan="2">
+                <span t-if="doc.partner_id">
+                    <span style="padding-left: 5px"  t-field="doc.partner_id.name"/>
+                </span>
+        </td>
+    </tr>
+    <tr>
+        <td class="boldBorder boldText" style="padding-left: 5px;" colspan="1">Fecha:</td>
+        <td class="boldBorder boldText" colspan="2">
+                <span t-if="doc.date_deadline">
+                <span style="padding-left: 5px" t-field="doc.date_deadline"/>
+                </span>
+        </td>
+
+        <td class="boldBorder boldText" style="padding-left: 5px;" colspan="1">Supervisor:</td>
+        <td class="boldBorder boldText" colspan="2">
+            <span t-if="doc.user_id">
+                <span style="padding-left: 5px;"  t-field="doc.user_id.name"/>
+            </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="boldBorder boldText" colspan="1">
+            <span style="padding-left: 5px;">Proyecto:</span>
+        </td>
+        <td class="boldBorder boldText" colspan="2">
+            <div t-if="doc.project_id">
+                <p style="padding-left: 5px;" t-field="doc.project_id.name"/>
+            </div>
+        </td>
+
+        <td class="boldBorder boldText" colspan="1">
+            <span style="padding-left: 5px;">
+                Supervisor Cliente:
+            </span>
+        </td>
+        <td class="boldBorder boldText" colspan="2">
+                <span t-if="doc.scaffold_id.supervisor_client">
+                    <span style="padding-left: 5px" t-field="doc.scaffold_id.supervisor_client.name"/>
+                </span>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left: 5px;" class="boldBorder boldText" colspan="1" rowspsan="1">Ubicación:
+        </td>
+        <td class="boldBorder boldText" colspan="2" rowspan="1">
+            <span t-if="doc.scaffold_id.location">
+                <span style="padding-left: 5px" t-field="doc.scaffold_id.location"/>
+            </span>
+        </td>
+
+       <td style="padding-left: 5px;" class="boldBorder boldText" colspan="1" rowspan="1">Solicitante:
+
+        </td>
+        <td class="boldBorder boldText" colspan="2" rowspan="1">
+            <span t-if="doc.scaffold_id.applicant">
+                <span style="padding-left: 5px" t-field="doc.scaffold_id.applicant.name"/>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td class="boldBorder boldText left" style="vertical-align: middle;padding-left: 5px;" colspan="4" rowspan="3">Zona / Equipo:
+                <span t-if="doc.scaffold_id.zone">
+                    <span style="padding-left: 5px" t-field="doc.scaffold_id.zone.name"/>
+                </span>
+        </td>
+        <td style="padding-left: 5px;" class="boldBorder boldText" colspan="1">
+            <span>PO:</span>
+        </td>
+        <td style="padding-left: 5px;" class="boldBorder boldText" colspan="2">
+            <div t-if="doc.scaffold_id.po_andamio">
+                <span style="padding-left: 5px" t-field="doc.scaffold_id.po_andamio"/>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left: 5px;" class="boldBorder boldText" colspan="1">
+            <span>OT:</span>
+        </td>
+        <td class="boldBorder boldText" colspan="2">
+            <div t-if="doc.scaffold_id.po_andamio">
+                <p style="padding-left: 5px" t-field="doc.scaffold_id.ot_andamio"/>
+            </div>
+        </td>
+    </tr>
+
+    </table>
+            <table class="tableAll boldBorder">
+            <tr class="yellow">
+                <td class="boldBorder boldText center" rowspan="3" colspan="5"><br/>Personal</td>
+                <td class="boldBorder boldText center" rowspan="3" colspan="4"><br/>Categoria</td>
+                <td class="boldBorder boldText center" colspan="2">Horas</td>
+                <td class="boldBorder boldText center" colspan="2">Precio</td>
+                <td class="boldBorder boldText center" style="width:50px" rowspan="3" colspan="2"><br/>Suma</td>
+            </tr>
+            <tr class="yellow">
+                <td class="boldBorder boldText center" colspan="1">A</td>
+                <td class="boldBorder boldText center" colspan="1">B</td>
+                <td class="boldBorder boldText center" colspan="1">A</td>
+                <td class="boldBorder boldText center" colspan="1">B</td>
+            </tr>
+
+            <tr class="yellow">
+                <td class="boldBorder boldText center" colspan="1">Normales</td>
+                <td class="boldBorder boldText center" colspan="1">Extras</td>
+                <td class="boldBorder boldText center" colspan="1">Normales</td>
+                <td class="boldBorder boldText center" colspan="1">Extras</td>
+            </tr>
+            <t t-set="task_types" t-value="doc.partial_task_ids.mapped('task_type')"/>
+            <t t-set="i" t-value="0"/>
+            <t t-set="total_timesheet" t-value="0"/>
+                <t t-foreach="doc.parent_id.get_timesheets_for_report()" t-as="line">
+                    <t t-if="line['subtask'].task_type in task_types">
+                        <tr class="center">
+                            <td class="boldBorder left" colspan="5">&amp;nbsp;<span t-if="line['name']" t-esc="line['name']"/></td>
+                            <td class="boldBorder left" colspan="4"><span style="padding-left: 5px" t-field="line['subtask'].task_type"/></td>
+                            <td class="boldBorder right"> <span t-esc="'%.2f'%(line['normal_hour'])"/>&amp;nbsp; </td>
+                            <td class="boldBorder right"> <span t-esc="'%.2f'%(line['extra_hour'])"/>&amp;nbsp; </td>
+                            <td class="boldBorder right">
+                                <div t-if="is_valorated">
+                                    <span t-esc="str('%.2f'%(line['normal_hour_price'])) + ' €/h'"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder right">
+                                <div t-if="is_valorated">
+                                    <span t-esc="str('%.2f'%(line['extra_hour_price'])) + ' €/h'"/>
+                                </div>
+                            </td>
+                            <td class="boldBorder right" colspan="2">
+                                <div t-if="is_valorated">
+                                    <span t-esc="'%.2f'%(line['total'])"/>€&amp;nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <t t-set="i" t-value="i+1"/>
+                        <t t-set="total_timesheet" t-value="total_timesheet + float(line['total'])"/>
+                    </t>
+                </t>
+            <t t-foreach="list(range(i,Nlines))" t-as="aux">
+                <tr class="center">
+                    <td class="boldBorder" colspan="5" style="color:white">a</td>
+                    <td class="boldBorder" colspan="4"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder" colspan="2"/>
+                </tr>
+            </t>
+
+            <tr class="right">
+                <td class="boldBorder boldText " colspan="13">TOTAL PARCIAL....................</td>
+                <td class="boldBorder"><div>
+                            <p class="boldText ">
+                    <div t-if="is_valorated">
+                        <span t-esc="'%.2f'%(total_timesheet)"/>€&amp;nbsp;
+                    </div>
+                    </p>
+                        </div></td>
+            </tr>
+
+
+            <tr class="yellow o_material_header" style="height:65px;">
+                <td name="reference" class="boldBorder boldText center" colspan="2"><br/>Referencia<br/></td>
+                <td name="service" class="boldBorder boldText center" colspan="4"><br/>Servicios<br/></td>
+                <td name="category" class="boldBorder boldText center" colspan="3"><br/>Categoria<br/></td>
+                <td name="qty" class="boldBorder boldText center" colspan="2"><br/>Cantidad<br/></td>
+                <td name="price" class="boldBorder boldText center" colspan="2"><br/>Precio<br/></td>
+                <td name="sum" class="boldBorder boldText center" style="width:50px" colspan="2"><br/>Suma<br/></td>
+            </tr>
+            <t t-set="total_services" t-value="0"/>
+            <t t-set="i" t-value="0"/>
+            <t t-if="doc.parent_id">
+                <t t-foreach="doc.parent_id.material_ids" t-as="material">
+                    <t t-if="material.subtask_id.task_type in doc.partial_task_ids.mapped('task_type')">
+                        <tr class="center">
+                            <td class="boldBorder center" colspan="2">&amp;nbsp;<span t-esc="material.product_id._get_customer_product_code(doc.scaffold_id.client_id.id, material.quantity)"/>&amp;nbsp; </td>
+                            <td class="boldBorder left" colspan="4">&amp;nbsp;<span t-field="material.product_id.name"/>&amp;nbsp; </td>
+                            <td class="boldBorder left" colspan="3">&amp;nbsp; <span t-field="material.product_id.categ_id"/>&amp;nbsp; </td>
+                            <td class="boldBorder right" colspan="2"> <span t-esc="str('%s %s'%(material.quantity,material.product_id.uom_id.name))"/>&amp;nbsp; </td>
+
+                            <td class="boldBorder right" colspan="2">
+                                <div t-if="is_valorated">
+                                    <span t-esc="str('%.2f €/%s'%(material.price,material.product_id.uom_id.name))"/>&amp;nbsp;
+                                </div>
+                            </td>
+
+                            <td class="boldBorder right" colspan="2">
+                                <div t-if="is_valorated">
+                                    <span t-esc="str('%.2f €'%(material.price_subtotal))"/>&amp;nbsp;
+                                </div>
+                            </td>
+                        </tr>
+                        <t t-set="total_services" t-value="total_services + material.price_subtotal"/>
+                        <t t-set="i" t-value="i+1"/>
+                    </t>
+                </t>
+            </t>
+            <t t-foreach="list(range(i,Nlines))" t-as="aux">
+                <tr class="center">
+                    <td class="boldBorder" colspan="2" style="color:white">a</td>
+                    <td class="boldBorder" colspan="4" style="color:white">a</td>
+                    <td class="boldBorder" colspan="3"/>
+                    <td class="boldBorder" colspan="2"/>
+                    <td class="boldBorder" colspan="2"/>
+                    <td class="boldBorder" colspan="2"/>
+                </tr>
+            </t>
+
+            <tr class="right">
+                <td class="boldBorder boldText " colspan="13">TOTAL PARCIAL....................</td>
+                <td class="boldBorder">
+                    <span t-if="is_valorated" t-esc="str('%.2f'%(total_services)) + ' €'"/>
+                </td>
+            </tr>
+            </table>
+            <table class="tableAll boldBorder o_service_table">
+            <tr class="yellow">
+                <td class="boldBorder boldText center" colspan="5">Andamio</td>
+                <td class="boldBorder boldText center"> Referencia andamio</td>
+                <td class="boldBorder boldText center" colspan="3"></td>
+
+            </tr>
+
+
+            <tr class="yellow o_service_header">
+                <td name="reference" class="boldBorder boldText center" colspan="2"> Referencia</td>
+                <td name="service" class="boldBorder boldText center" colspan="3"> Servicio</td>
+                <td name="qty" class="boldBorder boldText center"> M3</td>
+                <td name="increment" class="boldBorder boldText center"> Incremento</td>
+                <td name="price_qty" class="boldBorder boldText center"> Precio M3</td>
+                <td name="sum" class="boldBorder boldText center"> Suma</td>
+            </tr>
+            <t t-set="total_andamios" t-value="0"/>
+            <t t-set="i" t-value="0"/>
+            <t t-foreach="doc.partial_task_ids" t-as="subtask">
+                <span t-if="(subtask.task_type == 'assembly') or (subtask.task_type == 'disassembly')">
+                    <tr class="o_service_body">
+                        <td colspan="2" class="center boldBorder">
+                            <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+                        </td>
+                        <td name="service" class="center boldBorder"> <span t-field="subtask.timesheet_product_id.name"/></td>
+                        <td class="right">
+                            <div>
+                                <span t-field="subtask.cubic_meters"/>&amp;nbsp;
+                            </div>
+                        </td>
+                        <td class="right">&amp;nbsp; </td>
+                        <td class="right">
+                                <div t-if="is_valorated">
+                                    <span t-esc="'%.2f'%(subtask.get_right_tariff_price_cubic())"/> €&amp;nbsp;
+                                </div>
+                        </td>
+                        <td class="right">
+                            <div t-if="is_valorated">
+                                <span t-esc="'%.2f'%(subtask.get_right_tariff_price_cubic() * float(subtask.cubic_meters))"/> € &amp;nbsp;
+                            </div>
+                        </td>
+                    </tr>
+                    <t t-set="total_andamios" t-value="total_andamios + float(subtask.get_right_tariff_price_cubic() * float(subtask.cubic_meters))"/>
+                    <t t-set="i" t-value="i + 1"/>
+                </span>
+            </t>
+            <t t-foreach="doc.partial_task_ids" t-as="subtask">
+                <span t-if="subtask.task_type == 'renting'">
+                    <tr class="boldBorder boldText center o_service_body_renting_1">
+                        <td rowspan="3" colspan="2" style="vertical-align:middle;">
+                            <span t-esc="subtask.timesheet_product_id._get_customer_product_code(doc.scaffold_id.client_id.id, subtask.cubic_meters)"/>
+                        </td>
+                        <td style="vertical-align:middle;" name="service" rowspan="3" colspan="3">Alquiler Andamio</td>
+                        <td name=""> Fecha inicio alquiler</td>
+                        <td class="boldBorder boldText center"> Fecha final alquiler</td>
+                        <td class="center boldBorder ">Precio diario</td>
+                        <td class="center boldBorder ">Total alquiler</td>
+                    </tr>
+                    <tr class="o_service_body_renting_2">
+                        <td class="right" rowspan="1">&amp;nbsp;
+                            <span t-if="subtask.renting_start_date">
+                                <span t-esc="subtask.format_date(subtask.renting_start_date)"/>
+                            </span>
+                        </td>
+                        <td class="right" rowspan="1">&amp;nbsp;
+                            <span t-if="subtask.renting_end_date">
+                                <span t-esc="subtask.format_date(subtask.renting_end_date)"/>
+                            </span>
+                        </td>
+                        <td class="right" rowspan="1">&amp;nbsp;
+                                <span t-if="is_valorated">
+                                    <span t-esc="'%.2f'%(subtask.get_right_tariff_price_cubic() * subtask.cubic_meters)"/> €&amp;nbsp;
+                                </span>
+                        </td>
+                        <td class="right" rowspan="1">&amp;nbsp;
+                            <span t-if="is_valorated">
+                                <span t-esc="'%.2f'%(subtask.get_right_tariff_price_cubic() * float(subtask.count_days_rent()) * subtask.cubic_meters)"/> €&amp;nbsp;
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center" colspan="4">
+                           <span t-esc="'%.2f x %.2f x %.2f' % (subtask.get_right_tariff_price_cubic(), subtask.count_days_rent(), subtask.cubic_meters)" />
+                        </td>
+                    </tr>
+
+                    <t t-set="total_andamios" t-value="total_andamios + float(subtask.get_right_tariff_price_cubic() * float(subtask.count_days_rent()) * subtask.cubic_meters)"/>
+                    <t t-set="i" t-value="i + 2"/>
+                </span>
+            </t>
+            <t t-foreach="list(range(i,8))" t-as="aux">
+                <tr class="center">
+                    <td class="boldBorder" colspan="2" style="color:white">a</td>
+                    <td class="boldBorder" colspan="3" style="color:white">a</td>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                    <td class="boldBorder"/>
+                </tr>
+            </t>
+            <tr class="right">
+                <td class="boldBorder boldText " colspan="8">TOTAL PARCIAL....................</td>
+                <td class="boldBorder">
+                    <span t-if="is_valorated" t-esc="str('%.2f'%(total_andamios)) + ' €'"/>
+                </td>
+            </tr>
+            <tr class="right">
+                <td class="boldBorder boldText left " colspan="1"/>
+                <td class="boldBorder boldText " colspan="7">TOTAL PARTE DIARIO....................</td>
+                <td class="boldBorder">
+                    <span t-if="is_valorated" t-esc="str('%.2f'%((total_timesheet + total_services + total_andamios))) + ' €'"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="boldBorder boldText center " colspan="4">
+                    CONFORME
+                    <div t-if="doc.signature">
+                        <img class="text-center" t-att-src="image_data_uri(doc.signature)" style="max-height: 4cm; max-width: 5cm;margin-left: 15%;"/>
+                    </div>
+                </td>
+                <td class="boldBorder" colspan="10">
+                <p style="padding-left: 5px" class="boldText">OBSERVACIONES</p>
+                <div style="padding-left: 5px"  t-raw="doc.description" />
+                </td>
+            </tr>
+
+        </table>
+        </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="binhex_andamios_report.report_parte_unico">
+            <t t-set="is_valorated" t-value="True"/>
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-if="doc.is_parent">
+                        <t t-call="binhex_andamios_report.report_parte_unico_document" t-lang="doc.partner_id.lang"/>
+                    </t>
+                    <t t-if="doc.task_type == 'partial'">
+                        <t t-call="andamios_extend.partial_part_document" t-lang="doc.partner_id.lang"/>
+                    </t>
+                    <t t-if="doc.task_type != 'partial' and not doc.is_parent">
+                        <t t-call="binhex_andamios_report.report_parte_unico_document_selection" t-lang="doc.partner_id.lang"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_parte_unico_no_valorado">
+            <t t-call="web.html_container">
+                <t t-set="is_valorated" t-value="False"/>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-if="doc.is_parent">
+                        <t t-call="binhex_andamios_report.report_parte_unico_document" t-lang="doc.partner_id.lang"/>
+                    </t>
+                    <t t-if="doc.task_type == 'partial'">
+                        <t t-call="andamios_extend.partial_part_document" t-lang="doc.partner_id.lang"/>
+                    </t>
+                    <t t-if="doc.task_type != 'partial' and not doc.is_parent">
+                        <t t-call="binhex_andamios_report.report_parte_unico_document_selection" t-lang="doc.partner_id.lang"/>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_parte_unico_no_valorado" model="ir.actions.report">
+            <field name="name">Parte Único No Valorado</field>
+            <field name="model">project.task</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">andamios_extend.report_parte_unico_no_valorado</field>
+            <field name="attachment_use" eval="True" />
+            <field name="attachment">(object.name+'.pdf')</field>
+            <field name="print_report_name">object.name</field>
+            <field name="paperformat_id" ref="binhex_andamios_report.parte_unico" />
+            <field name="binding_model_id" ref="project.model_project_task"/>
+        </record>
+
+    </data>
+</odoo>

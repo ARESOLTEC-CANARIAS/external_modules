@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        
+        
+        <!-- Form view for "model" -->
+        <record id="scaffold_partial_report_wizard_form" model="ir.ui.view">
+            <field name="name">scaffold.partial.report.wizard.form</field>
+            <field name="model">scaffold.partial.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Partial report">
+                    <sheet>
+                        <p>Select the parts to use in the partial task.</p>
+                        <group>
+                            <field name="scaffold_id" invisible="1"/>   
+                            <field name="task_id" invisible="1"/>
+                            <field name="task_ids" 
+                            widget="many2many_tags" 
+                            domain="[('id', 'child_of', task_id), ('id','!=', task_id), ('task_type','!=','partial'), ('facture_in_partial', '=', False)]"
+                            />
+                        </group>
+                        <footer>
+                            <button name="create_partial_task" string="Generate" type="object" class="btn-primary"/>
+                            <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
