@@ -1,0 +1,141 @@
+  <odoo>
+  <data>
+    <record id="binhex_project_task_scaffold" model="ir.ui.view">
+        <field name="name">binhex.project.task.scaffold</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='partner_id']" position="attributes">
+            <attribute name="readonly">1</attribute>
+          </xpath>
+          <xpath expr="//field[@name='partner_id']" position="before">
+              <field name="is_parent" invisible="parent_id != False"/>
+          </xpath>
+          <xpath expr="//field[@name='partner_id']" position="after">
+              <field name="task_type" readonly="1" invisible="is_parent == True"/>
+              <field name="cubic_meters" readonly="is_parent == False" invisible="scaffold_id == False"/>
+
+              <field name="assembly_date"
+                invisible="scaffold_id == False or (task_type != 'assembly' and is_parent == False)"
+                readonly="is_parent == False"/>
+              <field name="subscribe_date"
+                invisible="scaffold_id == False or (task_type != 'assembly' and is_parent == False)"
+                readonly="is_parent == False"/>
+              <field name="unsubscribe_date"
+                invisible="scaffold_id == False or (task_type != 'disassembly' and is_parent == False)"
+                readonly="is_parent == False"/>
+              <field name="disassembly_date"
+                invisible="scaffold_id == False or (task_type != 'disassembly' and is_parent == False)"
+                readonly="is_parent == False"/>
+
+              <field name="renting_start_date"
+                invisible="is_parent == True or (task_type != 'renting' and is_parent == False)"/>
+              <field name="renting_end_date"
+                invisible="is_parent == True or (task_type != 'renting' and is_parent == False)"/>
+
+              <field name="scaffold_id" context="{'partner_id':partner_id}"
+                domain="[('client_id', '=', partner_id)]"
+                readonly="is_parent == False"/>
+
+              <!--<field name="po_andamio"/>
+              <field name="ot_andamio"/>-->
+          </xpath>
+          <!--<xpath expr="//field[@name='user_id']" position="after">
+              <field name="applicant" attrs="{'readonly': [('is_parent', '=', False)]}"/>
+              <field name="payer" attrs="{'readonly': [('is_parent', '=', False)]}"/>
+          </xpath>-->
+          <xpath expr="//page[@name='description_page']" position="before">
+            <page name="sub_tasks" string="Sub-Tasks" invisible="is_parent == False or scaffold_id == False">
+                <group>
+                    <field name="hide_create_renting_subtask_button" invisible="1"/>
+                    <field name="assembly_sub_task"/>
+                    <field name="disassembly_sub_task"/>
+                    <field name="extra_sub_task"/>
+                    <button groups="binhex_andamios.group_scaffold_admin" type="object" string="Create Renting Sub-task" name="create_renting_subtask" invisible="hide_create_renting_subtask_button == True"/>
+                </group>
+            </page>
+          </xpath>
+          <xpath expr="//field[@name='parent_id']" position="attributes">
+            <attribute name="invisible">recurring_task == True or is_parent == True</attribute>
+          </xpath>
+        </field>
+    </record>
+
+    <!--<field name="parent_id" domain="[('parent_id', '=', False)]" attrs="{'invisible' : [('recurring_task', '=', True)]}"/>-->
+
+    <record id="binhex_project_task_hide_timesheet_product" model="ir.ui.view">
+        <field name="name">binhex.project.task.hide.timesheet.product</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="sale_timesheet.project_task_view_form_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='pricing_type']" position="attributes">
+            <attribute name="invisible">is_parent == True</attribute>
+          </xpath>
+        </field>
+    </record>
+
+    <record id="binhex_account_analytic_line_worksheet" model="ir.ui.view">
+        <field name="name">binhex.account.analytic.line.worksheet</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='timesheet_ids']" position="attributes">
+            <attribute name="invisible">is_parent == False</attribute>
+            <attribute name="context">{'default_project_id': project_id, 'task_id': id}</attribute>
+          </xpath>
+          <xpath expr="//field[@name='progress']" position="attributes">
+            <attribute name="invisible">is_parent == False</attribute>
+          </xpath>
+          <xpath expr="//group[@name='project_hours']" position="attributes">
+            <attribute name="invisible">is_parent == False</attribute>
+          </xpath>
+          <xpath expr="//field[@name='timesheet_ids']/list/field[@name='unit_amount']" position="before">
+            <field name="owner_task_id" readonly="1" />
+            <field name="sub_task" domain="[('parent_id', '=', owner_task_id)]"/>
+          </xpath>
+          <xpath expr="//field[@name='timesheet_ids']/form//field[@name='company_id']" position="after">
+            <field name="owner_task_id" readonly="1" />
+            <field name="sub_task" domain="[('parent_id', '=', owner_task_id)]"/>
+          </xpath>
+        </field>
+    </record>
+
+     <record id="project_task_code_search_view_inv" model="ir.ui.view">
+        <field name="name">project.task.code.search.inv</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form" />
+        <field name="arch" type="xml">
+            <filter name="create_date" position="after">
+                <filter string="Invoiced" name="invoiced" context="{'group_by': 'invoiced'}"/>
+            </filter>
+            <filter name="inactive" position="after">
+                <filter string="Not Invoiced" name="no_invoiced" domain="[('invoiced', '=', False)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="project_task_type_form_inherit" model="ir.ui.view">
+        <field name="name">project.task.type.form.inherit</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="after">
+                <field name="sign_stage"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="project_project_inherit_form" model="ir.ui.view">
+        <field name="name">project.project.inherit.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='partner_id']" position="after">
+              <field name="sequence_id"/>
+          </xpath>
+        </field>
+    </record>
+
+
+  </data>
+</odoo>

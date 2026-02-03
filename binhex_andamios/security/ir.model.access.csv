@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_andamios_andamios_admin,scaffold.scaffold,model_scaffold_scaffold,group_scaffold_admin,1,1,1,1
+access_andamios_stages_admin,scaffold.stage,model_scaffold_stage,group_scaffold_admin,1,1,1,1
+access_andamios_zone_admin,scaffold.zone,model_scaffold_zone,group_scaffold_admin,1,1,1,1
+access_andamios_andamios_technician,scaffold.scaffold,model_scaffold_scaffold,group_scaffold_technician,1,0,0,0
+access_andamios_stages_technician,scaffold.stage,model_scaffold_stage,group_scaffold_technician,1,0,0,0
+access_andamios_zone_technician,scaffold.zone,model_scaffold_zone,group_scaffold_technician,1,0,0,0

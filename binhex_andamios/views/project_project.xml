@@ -1,0 +1,15 @@
+
+<odoo>
+  <data>
+    <record id="binhex_project_project_client" model="ir.ui.view">
+        <field name="name">binhex.project.task.scaffold</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.project_project_view_form_simplified_footer"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='name']" position="after">
+              <field name="partner_id" required="1"/>
+          </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

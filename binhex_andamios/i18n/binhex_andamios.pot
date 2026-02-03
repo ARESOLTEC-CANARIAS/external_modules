@@ -1,0 +1,1224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* binhex_andamios
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-03 10:36+0000\n"
+"PO-Revision-Date: 2026-02-03 10:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid " Invoices"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid " Sale Orders"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid " Tasks"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " doesn't have a related service"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " doesn't have a type selected"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " doesn't have an income account"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " doesn't have any taxes"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " of the project "
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid " of the task "
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "%s, in task %s"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_kanban
+msgid "<span class=\"o_label\">Invoices</span>"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_kanban
+msgid "<span class=\"o_label\">S.O.</span>"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_kanban
+msgid "<span class=\"o_label\">Tasks</span>"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "<span class=\"o_stat_text\">Project</span>"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_res_partner_view_button
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_sale_order_view_button
+msgid "<span class=\"o_stat_text\">Scaffolds</span>"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "A disassembly cubic meters must be set before creating any sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "A disassembly date must be set before creating any sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "A scaffold must be selected before creating any sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_dynamic_report_res_config_settings_view
+msgid "Add the units of measure that will be treated as day units."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__addit_modules
+msgid "Additional Modules"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:res.groups,name:binhex_andamios.group_scaffold_admin
+msgid "Admin"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Amount Due"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "An assembly date must be set before creating any sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_account_analytic_line
+msgid "Analytic Line"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_res_partner_view_button
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_sale_order_view_button
+msgid "Andamios"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__applicant
+msgid "Applicant"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__assembly_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__assembly_date
+msgid "Assembling date"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_product__default_service__assembly
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_template__scaffold_service_type__assembly
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__project_task__task_type__assembly
+msgid "Assembly"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__assembly_sub_task
+msgid "Assembly Sub Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__assembly_prod_id
+msgid "Assembly service"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Basado en la Fecha de alta este andamio debería estar en la etapa Alta"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Basado en la Fecha de baja este andamio debería estar en la etapa Baja"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid ""
+"Basado en la Fecha de desmontaje este andamio debería estar en la etapa "
+"Desmontaje"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid ""
+"Basado en la Fecha de montaje este andamio debería estar en la etapa Montaje"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Bill Date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_dynamic_report_res_config_settings_view
+msgid "Binhex Scaffold Configuration"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Characteristics"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.actions.server,name:binhex_andamios.ir_cron_check_scaffold_stage_ir_actions_server
+msgid "Check Scaffold Stage based on task dates"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__client_id
+msgid "Client"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.ui.menu,name:binhex_andamios.menu_scaffold_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_res_partner
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__contact_id
+msgid "Contact"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_sale_order_view_button
+msgid "Crear andamio"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Create Invoice"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_project_task_scaffold
+msgid "Create Renting Sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Create Sale Order"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Create Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_dynamic_report_res_config_settings_view
+msgid "Create scaffolds for these services when used on quotations."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__fast_task
+msgid "Create subtask"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__create_uid
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__create_uid
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__create_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__create_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move_line__rental_qty
+msgid "Cubic Meters"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_bank_statement_line__cubic_meters_tasks
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move__cubic_meters_tasks
+msgid "Cubic Meters Tasks(m3)"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__cubic_meters
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__cubic_meters
+msgid "Cubic meters"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "Cubic meters quantity must be set before creating any sub-task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Customer"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_company__day_udm_ids
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_config_settings__day_udm_ids
+msgid "Day UdMs"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.scaffold_sale_order_view_button
+msgid "Days"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:uom.uom,name:binhex_andamios.binhex_product_uom_day_cubic_meters
+msgid "Days x M3"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_product_product__default_service
+msgid "Default service"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__description
+msgid "Description"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_product__default_service__disassembly
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_template__scaffold_service_type__disassembly
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__project_task__task_type__disassembly
+msgid "Disassembly"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__disassembly_sub_task
+msgid "Disassembly Sub Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__disassembly_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__disassembly_date
+msgid "Disassembly date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__disassembly_prod_id
+msgid "Disassembly service"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__display_name
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__display_name
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__contact_email
+msgid "Email"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__renting_end_date
+msgid "End date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task_type__sign_stage
+msgid "Etapa Firmado"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_template__scaffold_service_type__extension
+msgid "Extension"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__extension_prod_id
+msgid "Extension service"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__add_modules
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__scaffold_extend_ids
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Extensions"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__project_task__task_type__extra
+msgid "Extra"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__extra_sub_task
+msgid "Extra Sub Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__subscribe_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__subscribe_date
+msgid "Fecha de Alta"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__unsubscribe_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__unsubscribe_date
+msgid "Fecha de Baja"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Fecha de alta no establecida"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Fecha de baja no establecida"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Fecha de montaje no establecida"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__fold
+msgid "Folded in Kanban"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__height
+msgid "Height"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__hide_create_renting_subtask_button
+msgid "Hide Create Renting Subtask Button"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__id
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__id
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__id
+msgid "ID"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__message_has_error
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__image
+msgid "Image"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Info"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Invoice Date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__invoiced
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.project_task_code_search_view_inv
+msgid "Invoiced"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__account_move_ids
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__invoice_count
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Invoices"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__is_extension
+msgid "Is Extension"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__is_parent
+msgid "Is Parent"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "La fecha de alta no puede ser posterior a la de baja"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "La fecha de baja no puede ser posterior a la de desmontaje"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "La fecha de montaje no puede ser posterior a la de alta"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__write_uid
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__write_uid
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__write_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__write_date
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__llength
+msgid "Length"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__location
+msgid "Location"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__name
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__name
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__name
+msgid "Name"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.project_task_code_search_view_inv
+msgid "Not Invoiced"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Number"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move_line__number_of_days
+msgid "Number of days"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__ot_andamio
+msgid "O.T"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Open"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Order Date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__po_andamio
+msgid "P.O"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "Parent scaffold must be assigned to some task/project"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__payer
+msgid "Payer"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__pricelist_id
+msgid "Pricelist"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_product_product
+msgid "Product Variant"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+#: model:ir.model,name:binhex_andamios.model_project_project
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_bank_statement_line__project_id
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move__project_id
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__project_id
+msgid "Project"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order_line__user_value
+msgid "Quantity"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order_line__user_value_delivered
+msgid "Quantity delivered"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move_line__rental
+msgid "Rental"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order_line__rental_qty_delivered
+msgid "Rental quantity delivered"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_product__default_service__renting
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__product_template__scaffold_service_type__renting
+#: model:ir.model.fields.selection,name:binhex_andamios.selection__project_task__task_type__renting
+msgid "Renting"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "Renting "
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__renting_prod_id
+msgid "Renting service"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__sales_order_count
+msgid "Sale Orders"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__order_ids
+msgid "Sale order"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Sale orders"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Sales Person"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/sale_order.py:0
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__scaffold_id
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_partner__andamio_ids
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_users__andamio_ids
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order_line__scaffold_id
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__andamio_conteo
+#: model:product.template,name:binhex_andamios.binhex_scaffold
+msgid "Scaffold"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_partner__andamio_ids_size
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_users__andamio_ids_size
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order__andamio_ids_size
+msgid "Scaffold Qty"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:product.template,name:binhex_andamios.binhex_scaffold_assembly
+msgid "Scaffold assembly"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:product.template,name:binhex_andamios.binhex_scaffold_disassembly
+msgid "Scaffold disassembly"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:product.template,name:binhex_andamios.binhex_scaffold_extension
+msgid "Scaffold extension"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:product.template,name:binhex_andamios.binhex_scaffold_renting
+msgid "Scaffold renting"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_product_product__scaffold_service_type
+#: model:ir.model.fields,field_description:binhex_andamios.field_product_template__scaffold_service_type
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order_line__task_type
+msgid "Scaffold service type"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_company__scaffold_services
+#: model:ir.model.fields,field_description:binhex_andamios.field_res_config_settings__scaffold_services
+msgid "Scaffold services"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/res_partner.py:0
+#: model:ir.model.fields,field_description:binhex_andamios.field_sale_order__andamio_ids
+#: model:ir.module.category,name:binhex_andamios.module_category_scaffolds
+#: model:ir.ui.menu,name:binhex_andamios.menu_root
+msgid "Scaffolds"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.actions.act_window,name:binhex_andamios.andamios_action_window
+#: model:ir.ui.menu,name:binhex_andamios.andamio_menu
+msgid "Scaffolds list"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__sequence
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_stage__sequence
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_project_task__timesheet_product_id
+msgid ""
+"Service that will be used by default when invoicing the time spent on a "
+"task. It can be modified on each task individually by selecting a specific "
+"sales order item."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_bank_statement_line__boolean_task
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move__boolean_task
+msgid "Show Tasks"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Source Document"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__stage_id
+msgid "Stage"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.actions.act_window,name:binhex_andamios.scaffold_stages_action_tree
+#: model:ir.ui.menu,name:binhex_andamios.menu_event_scaffold_stages
+msgid "Stages"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__renting_start_date
+msgid "Start date"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_analytic_line__sub_task
+msgid "Sub-Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_project_task_scaffold
+msgid "Sub-Tasks"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__supervisor_id
+msgid "Supervisor"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__supervisor_client
+msgid "Supervisor client"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+#: model:ir.model,name:binhex_andamios.model_project_task
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_analytic_line__owner_task_id
+#: model:ir.model.fields,field_description:binhex_andamios.field_account_move_line__task_id
+msgid "Task"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_project_task_type
+msgid "Task Stage"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__task_name
+msgid "Task name"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__task_type
+msgid "Task type"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__task_count
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.binhex_account_move_scaffold
+msgid "Tasks"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Tax"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Tax Excluded"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Tax Total"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:res.groups,name:binhex_andamios.group_scaffold_technician
+msgid "Technician"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__contact_phone
+msgid "Telephone number"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "The scaffold doesn't have any assembly service selected"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "The scaffold doesn't have any disassembly service selected"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "The scaffold doesn't have any renting service selected"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid "The service "
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/account_move.py:0
+msgid "The task "
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "There is no selected service that is of type assembly by default"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "There is no selected service that is of type disassembly by default"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/scaffold.py:0
+msgid "There is no selected service that is of type extension by default"
+msgstr ""
+
+#. module: binhex_andamios
+#. odoo-python
+#: code:addons/binhex_andamios/models/project.py:0
+msgid "There is no selected service that is of type renting by default"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_stage__fold
+msgid ""
+"This stage is folded in the kanban view when there are no records in that "
+"stage to display."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__timesheet_product_id
+msgid "Timesheet Product"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Total"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Total Tax Excluded"
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Total Tax Included"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_stage__sequence
+msgid "Used to order stages. Lower is better."
+msgstr ""
+
+#. module: binhex_andamios
+#: model_terms:ir.ui.view,arch_db:binhex_andamios.andamios_form
+msgid "Vendor"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,help:binhex_andamios.field_scaffold_scaffold__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__width
+msgid "Width"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__task_id
+msgid "Worksheet"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_task__worksheet_line_size
+msgid "Worksheet Line Size"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_scaffold__zone
+msgid "Zone"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.actions.act_window,name:binhex_andamios.scaffold_zone_action_tree
+#: model:ir.ui.menu,name:binhex_andamios.menu_event_scaffold_zone
+msgid "Zones"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model.fields,field_description:binhex_andamios.field_project_project__sequence_id
+msgid "scaffold sequence"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_scaffold_scaffold
+msgid "scaffold.scaffold"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_scaffold_stage
+msgid "scaffold.stage"
+msgstr ""
+
+#. module: binhex_andamios
+#: model:ir.model,name:binhex_andamios.model_scaffold_zone
+msgid "scaffold.zone"
+msgstr ""

@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+    <record id="binhex_dynamic_report_res_config_settings_view" model="ir.ui.view">
+            <field name="name">binhex.dynamic.report.res.config.settings.view</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <div class="app_settings_block" data-string="Binhex Scaffolds" data-key="binhex_andamios" groups="base.group_system">
+                        <h2>Binhex Scaffold Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <label for="day_udm_ids"/>
+                                <div class="text-muted">
+                                    Add the units of measure that will be treated as day units.
+                                </div>
+                                <field name="day_udm_ids" widget="many2many_tags" />
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <label for="scaffold_services"/>
+                                <div class="text-muted">
+                                    Create scaffolds for these services when used on quotations.
+                                </div>
+                                <field name="scaffold_services" widget="many2many_tags" />
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

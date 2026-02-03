@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="binhex_sale_order_user_value_portal" inherit_id="sale.sale_order_portal_content">   
+        <xpath expr="//span[@t-field='line.product_uom_qty']" position="attributes">
+            <attribute name="t-field">line.user_value</attribute>
+        </xpath>
+    </template>
+</odoo>

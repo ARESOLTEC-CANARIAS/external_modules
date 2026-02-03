@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record id="binhex_scaffold_product_template_task_type" model="ir.ui.view">
+        <field name="name">binhex.scaffold.product.template.task.type</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after"> 
+                <field name="scaffold_service_type"/>                            
+            </xpath>            
+        </field>
+    </record>
+</data>
+</odoo>    
