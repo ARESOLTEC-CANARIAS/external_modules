@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+        <record id="sale_order_andamio_form" model="ir.ui.view">
+            <field name="name">sale.order.andamio</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Opciones reporte" name="report">
+                        <group>
+                            <field name="show_logo"/>
+                            <field name="hide_total"/>
+                            <field name="contract"/>
+                            <field name="ot_andamio"/>
+                            <field name="po_andamio"/>
+                            <field name="valorado"/>
+                        </group>
+                    </page>
+                    <page string="Contenido reporte" name="report">
+                        <group>
+                            <field name="introduccion"/>
+                            <field name="alcance_contenido"/>
+                            <field name="servicio_minimo"/>
+                            <field name="forma_condiciones_pago"/>
+                            <field name="condiciones_generales"/>
+                            <field name="conforme_aceptacion_partes"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
