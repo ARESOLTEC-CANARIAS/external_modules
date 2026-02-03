@@ -1,0 +1,915 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* andamios_extend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-03 10:34+0000\n"
+"PO-Revision-Date: 2026-02-03 10:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid " doesn't have a related service"
+msgstr " no tiene un servicio relacionado"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+#, python-format
+msgid " doesn't have a type selected"
+msgstr " no tiene un tipo seleccionado"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid " doesn't have an income account"
+msgstr " no tiene una cuenta de ingresos"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid " doesn't have any taxes"
+msgstr " no tiene impuestos"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid " of the project "
+msgstr " del proyecto"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid " of the task "
+msgstr " de la tarea"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_parte_unico_document
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_parte_unico_document_selection
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Cantidad<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Categoria"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Categoria<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Personal"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Precio<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Referencia<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Servicios<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Suma"
+msgstr "<br/>Servicios<br/>"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<br/>Suma<br/>"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/wizard/scaffold_partial_report_wizard.py:0
+msgid "<p>Parte parcial de %s, contiene los siguientes partes: %s .</p>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid ""
+"<span style=\"padding-left: 5px;\">\n"
+"                Supervisor Cliente:\n"
+"            </span>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<span style=\"padding-left: 5px;\">Proyecto:</span>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<span>OT:</span>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "<span>PO:</span>"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_invoice_document
+msgid "<strong>Contact</strong>"
+msgstr "<strong>Contacto</strong>"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_invoice_document
+msgid "<strong>Nº order</strong>"
+msgstr "<strong>Nº orden</strong>"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "A scaffold must be selected before creating any sub-task"
+msgstr "Se debe seleccionar un andamio antes de crear cualquier subtarea."
+
+#. module: andamios_extend
+#: model:ir.model.fields,help:andamios_extend.field_sale_order__project_id
+msgid ""
+"A task will be created for the project upon sales order confirmation. The "
+"analytic distribution of this project will also serve as a reference for "
+"newly created sales order items."
+msgstr ""
+"Se creará una tarea para el proyecto al confirmar el pedido de venta. La "
+"distribución analítica de este proyecto también servirá como referencia para "
+"los nuevos artículos del pedido de venta."
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__alias
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Alias"
+msgstr "Álias"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Alquiler Andamio"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea Analítica"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Andamio"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "Assembly"
+msgstr "Montaje"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__assembly_price
+msgid "Assembly price"
+msgstr "Precio de montaje"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "CONFORME"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "CONTROL PARTE DIARIO DE TRABAJO"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.create_account_analytic_line_wizard_form
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_partial_report_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Cliente"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Cliente:"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__color
+msgid "Color"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_bank_statement_line__contact_name
+#: model:ir.model.fields,field_description:andamios_extend.field_account_move__contact_name
+msgid "Contact name"
+msgstr "Nombre del contacto"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Create Partial Part"
+msgstr "Crear parte parcial"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__create_all_renting
+msgid "Create all renting"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-javascript
+#: code:addons/andamios_extend/static/src/xml/list_view_buttons.xml:0
+#: model:ir.actions.act_window,name:andamios_extend.create_account_analytic_line_wizard_action
+#: model_terms:ir.ui.view,arch_db:andamios_extend.create_account_analytic_line_wizard_form
+msgid "Create timesheets"
+msgstr "Crear Partes de horas"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__create_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__create_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__create_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__create_uid
+msgid "Created by"
+msgstr "Creado por "
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__create_date
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__create_date
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__create_date
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__create_date
+msgid "Created on"
+msgstr "Creado el "
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__currency_id
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_material__currency_id
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__date
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__date_deadline
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__name
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__diet_1
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__diet_1
+msgid "Diet 1"
+msgstr "Dieta 1"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__diet_2
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__diet_2
+msgid "Diet 2"
+msgstr "Dieta 2"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__diet_3
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__diet_3
+msgid "Diet 3"
+msgstr "Dieta 3"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "Disassembly"
+msgstr "Desmontaje"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__disassembly_price
+msgid "Disassembly price"
+msgstr "precio de Desmontaje"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__display_name
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__display_name
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__display_name
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__unit_amount
+msgid "Duration"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/wizard/create_account_analytic_line_wizard.py:0
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__employee_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+#: model:ir.model.fields.selection,name:andamios_extend.selection__project_task_time__type_hour__extra
+msgid "Extra"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__extra_hours
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__extra_hours
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Extra Hours"
+msgstr "Horas Extra"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__extra_subtotal_hours
+msgid "Extra Subtotal Hours"
+msgstr ""
+
+#. module: andamios_extend
+#: model:product.template,name:andamios_extend.binhex_extra_hour_operator_product_template
+msgid "Extra hour operator"
+msgstr "Horas extras de operador"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__extra_hour_price
+msgid "Extra hour price"
+msgstr "Precio de las horas extras"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Extras"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__facture_in_partial
+msgid "Facture in partial"
+msgstr "Facturar en parcial"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+#, python-format
+msgid "Fecha de alta no establecida"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+#, python-format
+msgid "Fecha de baja no establecida"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Fecha de creación"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+#, python-format
+msgid "Fecha de montaje no establecida"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Fecha final alquiler"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Fecha inicio alquiler"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Fecha:"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.create_account_analytic_line_wizard_form
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_partial_report_wizard_form
+msgid "Generate"
+msgstr "Generar"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "Generate Partial Task"
+msgstr "Generar Tarea Parcial"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__holiday_hours
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__holiday_hours
+msgid "Holiday Hours"
+msgstr "Horas festivas"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Horas"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__id
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__id
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__id
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Incremento"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_account_move
+msgid "Journal Entry"
+msgstr "Entrada de diario"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "La fecha de alta no puede ser posterior a la de baja"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "La fecha de baja no puede ser posterior a la de desmontaje"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "La fecha de montaje no puede ser posterior a la de alta"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__write_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__write_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__write_uid
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modificación por"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__write_date
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__write_date
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__write_date
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__write_date
+msgid "Last Updated on"
+msgstr "Ultima modificación el"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "M3"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_project_task_time
+msgid "Modelo personalizado para los partes de los andamios."
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_tag__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: andamios_extend
+#: model_terms:ir.actions.act_window,help:andamios_extend.scaffold_tag_action
+msgid "No tags found. Let's create one!"
+msgstr "No se encontraron etiquetas. ¡Vamos a crear una!"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Nombre"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields.selection,name:andamios_extend.selection__project_task_time__type_hour__normal
+msgid "Normal"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Normal Hours"
+msgstr "Horas Normales"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__normal_subtotal_hours
+msgid "Normal Subtotal Hours"
+msgstr "Subtotal de Horas Normales"
+
+#. module: andamios_extend
+#: model:product.template,name:andamios_extend.binhex_normal_hour_operator_product_template
+msgid "Normal hour operator"
+msgstr "Horas de operador"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__normal_hour_price
+msgid "Normal hour price"
+msgstr "Precio de las horas"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Normales"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_bank_statement_line__order_ref
+#: model:ir.model.fields,field_description:andamios_extend.field_account_move__order_ref
+msgid "Nº order"
+msgstr "Nº orden"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "OBSERVACIONES"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Parte Nº:"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.actions.report,name:andamios_extend.action_report_parte_unico_no_valorado
+msgid "Parte Único No Valorado"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields.selection,name:andamios_extend.selection__project_task__task_type__partial
+msgid "Partial"
+msgstr "Parcial"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__partial_task_ids
+msgid "Partial Task"
+msgstr "Parte parcial"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_partial_report_wizard_form
+msgid "Partial report"
+msgstr "Reporte Parcial"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Parts"
+msgstr "Partes"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_account_analytic_line__plus
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__plus
+msgid "Plus"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_search_view
+msgid "Por etapa"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Precio"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Precio M3"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Precio diario"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_material__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_product_product
+msgid "Product Variant"
+msgstr "Variante de producto"
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_project_project
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__project_id
+#: model:ir.model.fields,field_description:andamios_extend.field_sale_order__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Referencia"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Referencia andamio"
+msgstr ""
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "Renting "
+msgstr "Alquiler "
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__renting_price
+msgid "Renting Price"
+msgstr "Precio del alquiler"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/sale_order.py:0
+#: model:ir.model.fields,field_description:andamios_extend.field_account_bank_statement_line__scaffold_id
+#: model:ir.model.fields,field_description:andamios_extend.field_account_move__scaffold_id
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__scaffold_id
+msgid "Scaffold"
+msgstr "Andamio"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_partial_report_wizard_form
+msgid "Select the parts to use in the partial task."
+msgstr "Seleccione las piezas a utilizar en la tarea parcial."
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Servicio"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Solicitante:"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_material__subtask_id
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__subtask_id
+msgid "Subtask"
+msgstr "Subtarea"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_material__price_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Suma"
+msgstr "Suma"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Supervisor:"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "TOTAL PARCIAL...................."
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "TOTAL PARTE DIARIO...................."
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.constraint,message:andamios_extend.constraint_scaffold_tag_name_uniq
+msgid "Tag name already exists!"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.actions.act_window,name:andamios_extend.scaffold_tag_action
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_scaffold__tag_ids
+#: model:ir.ui.menu,name:andamios_extend.menu_scaffold_tag_act
+#: model_terms:ir.ui.view,arch_db:andamios_extend.scaffold_tag_form_view
+msgid "Tags"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.actions.act_window,help:andamios_extend.scaffold_tag_action
+msgid "Tags are perfect to categorize your scaffolds."
+msgstr "Las etiquetas son perfectas para categorizar sus andamios."
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_project_task
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__task_id
+msgid "Task"
+msgstr "Tarea"
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_project_task_material
+msgid "Task Material Used"
+msgstr "Materiales usados en la tarea"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__task_type
+msgid "Task type"
+msgstr "Tipo de tarea"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__task_ids
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid "The service "
+msgstr "El servicio"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid "The task "
+msgstr "La tarea"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "There is no selected service that is of type assembly by default"
+msgstr "No hay ningún servicio seleccionado que sea de tipo montaje por defecto"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "There is no selected service that is of type disassembly by default"
+msgstr "No hay ningún servicio seleccionado que sea de tipo desmontaje por defecto"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/project.py:0
+msgid "There is no selected service that is of type renting by default"
+msgstr "No hay ningún servicio seleccionado que sea de tipo alquiler por defecto"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__custom_timesheet_ids
+msgid "Timesheet"
+msgstr "Hoja de tiempo"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Timesheet Activities"
+msgstr "Actividades de hoja de tiempos"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Timesheets"
+msgstr "Hojas de tiempos"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__material_total
+msgid "Total"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__total_hours
+#: model_terms:ir.ui.view,arch_db:andamios_extend.project_task_form_inherited_view
+msgid "Total Hours"
+msgstr "Horas Totales"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Total alquiler"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task_time__type_hour
+msgid "Type of Hours"
+msgstr "Tipo de horas"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Ubicación:"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__unit_amount
+msgid "Unit Amount"
+msgstr "Horas (Duración)"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_scaffold_partial_report_wizard__task_id
+msgid "Worksheet"
+msgstr "Hoja de trabajo"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "Zona / Equipo:"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_create_account_analytic_line_wizard
+msgid "create.account.analytic.line.wizard"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_task__description
+msgid "description"
+msgstr "descripción"
+
+#. module: andamios_extend
+#: model:ir.actions.report,print_report_name:andamios_extend.action_report_parte_unico_no_valorado
+msgid "object.name"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__project_id
+msgid "project"
+msgstr "proyecto"
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_project_project__sequence_id
+msgid "scaffold sequence"
+msgstr "secuencia andamio"
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_scaffold_partial_report_wizard
+msgid "scaffold.partial.report.wizard"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_scaffold_scaffold
+msgid "scaffold.scaffold"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model,name:andamios_extend.model_scaffold_tag
+msgid "scaffold.tag"
+msgstr ""
+
+#. module: andamios_extend
+#: model:ir.model.fields,field_description:andamios_extend.field_create_account_analytic_line_wizard__task_id
+msgid "task"
+msgstr "tarea"
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+msgid "€ &amp;nbsp;"
+msgstr ""
+
+#. module: andamios_extend
+#: model_terms:ir.ui.view,arch_db:andamios_extend.partial_part_document
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_parte_unico_document
+#: model_terms:ir.ui.view,arch_db:andamios_extend.report_parte_unico_document_selection
+msgid "€&amp;nbsp;"
+msgstr ""

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="scaffold_form_view_inherit">
+            <field name="name">scaffold.form.view.inherit</field>
+            <field name="model">scaffold.scaffold</field>
+            <field name="inherit_id" ref="binhex_andamios.andamios_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='characteristics_page']/group" position="inside">
+                    <field name="currency_id" invisible="1"/>
+                    <field name="normal_hour_price"/>
+                    <field name="extra_hour_price"/>
+                    <field name="assembly_price"/>
+                    <field name="disassembly_price"/>
+                    <field name="renting_price"/>
+                </xpath>
+
+                <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                    <label for="alias"
+                    class="oe_edit_only"
+                    />
+                    <h3>
+                        <field name="alias"/>
+                    </h3>
+                </xpath>
+                <xpath expr="//field[@name='client_id']" position="after">
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Tareas no facturadas" name="not_invoiced_tasks_page">
+                        <field name="not_invoiced_tasks"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="scaffold_tree_view_inherit">
+            <field name="name">scaffold.list.view.inherit</field>
+            <field name="model">scaffold.scaffold</field>
+            <field name="inherit_id" ref="binhex_andamios.andamios_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="alias"/>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="after">
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="scaffold_search_view">
+            <field name="name">scaffold.search.view.inherit</field>
+            <field name="model">scaffold.scaffold</field>
+            <field name="arch" type="xml">
+               <search>
+                <field name="name" string="Nombre"/>
+                <field name="alias" string="Alias"/>
+                <separator/>
+                <filter name="date_filter" string="Fecha de creación" date="create_date"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Por etapa" name="stage_group_by" context="{'group_by': 'stage_id'}"/>
+                    <filter string="Cliente" name="client_group_by" context="{'group_by': 'client_id'}"/>
+                </group>
+               </search>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="scaffold_tag_form_view">
+            <field name="name">Tags</field>
+            <field name="model">scaffold.tag</field>
+            <field name="arch" type="xml">
+                <form string="Tags">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="scaffold_tag_action" model="ir.actions.act_window">
+            <field name="name">Tags</field>
+            <field name="res_model">scaffold.tag</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No tags found. Let's create one!
+              </p>
+              <p>
+                  Tags are perfect to categorize your scaffolds.
+              </p>
+            </field>
+        </record>
+        <menuitem action="scaffold_tag_action" id="menu_scaffold_tag_act" parent="binhex_andamios.menu_scaffold_configuration"/>
+
+        <record model="ir.ui.view" id="scaffold_tag_tree_view">
+            <field name="name">Tags</field>
+            <field name="model">scaffold.tag</field>
+            <field name="arch" type="xml">
+                <list editable="bottom" sample="1">
+                    <field name="name"/>
+                    <field name="color" widget="color_picker"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>
