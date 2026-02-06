@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Inherit Order Form View - Add markup next to margin in totals -->
+    <!-- Inherit Order Form View - Add "Margen Coste" row below standard margin -->
     <record model="ir.ui.view" id="sale_margin_compute_custom_form">
         <field name="name">sale.order.margin.markup.view.form</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
         <field name="arch" type="xml">
-            <!-- Add Markup % after the margin percent span -->
-            <xpath expr="//field[@name='margin_percent']/.." position="after">
-                <span class="oe_inline" invisible="amount_untaxed == 0">
-                    / <field name="margin_markup_percent" nolabel="1" class="oe_inline" widget="percentage"/> Markup
-                </span>
+            <!-- Add a second row "Margen Coste" below the first "Margen" row -->
+            <xpath expr="//div[hasclass('d-flex')][field[@name='margin']]" position="after">
+                <div class="d-flex float-end fw-bold" colspan="2" groups="base.group_user">
+                    <label for="margin" string="Margen Coste :"/>
+                    <div>
+                        <field name="margin" class="oe_inline"/>
+                        <span class="oe_inline" invisible="margin_markup_percent == 0">
+                            (<field name="margin_markup_percent" nolabel="1" class="oe_inline" widget="percentage"/>)
+                        </span>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>
