@@ -10,7 +10,7 @@
             <!-- Add a second row "Margen Coste" below the first "Margen" row -->
             <xpath expr="//div[hasclass('d-flex')][.//field[@name='margin']]" position="after">
                 <div class="d-flex float-end fw-bold" colspan="2" groups="base.group_user">
-                    <label for="margin" string="Margen Coste :"/>
+                    <label for="margin" string="Margen Coste"/>
                     <div>
                         <field name="margin" class="oe_inline"/>
                         <span class="oe_inline" invisible="margin_markup_percent == 0">
