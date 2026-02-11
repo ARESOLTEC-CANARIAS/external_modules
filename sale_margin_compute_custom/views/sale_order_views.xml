@@ -8,7 +8,7 @@
         <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
         <field name="arch" type="xml">
             <!-- Add a second row "Margen Coste" below the first "Margen" row -->
-            <xpath expr="//div[hasclass('d-flex')][field[@name='margin']]" position="after">
+            <xpath expr="//div[hasclass('d-flex')][.//field[@name='margin']]" position="after">
                 <div class="d-flex float-end fw-bold" colspan="2" groups="base.group_user">
                     <label for="margin" string="Margen Coste :"/>
                     <div>
