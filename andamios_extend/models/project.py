@@ -36,7 +36,7 @@ class ProjectTask(models.Model):
     total_hours = fields.Float(compute="_compute_total_hours")
     activity_user_id = fields.Many2one(readonly=False, store=True)
 
-    @api.depends('activity_ids.user_id')
+    @api.depends('activity_ids.user_id', 'scaffold_id', 'scaffold_id.supervisor_id')
     def _compute_activity_user_id(self):
         for record in self:
             if record.scaffold_id:
