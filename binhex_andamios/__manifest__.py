@@ -43,6 +43,7 @@
         'views/res_config_settings.xml',
         'views/product_template.xml',
         'views/sale_order_portal.xml',
+        'views/project_task.xml',
         'data/product.xml',
         'data/stage.xml',
         'data/service_cron.xml',

@@ -56,11 +56,29 @@ class ProjectTask(models.Model):
     disassembly_sub_task = fields.Boolean()
     extra_sub_task = fields.Boolean()
 
+    def default_timesheet_product_id(self):
+        for record in self:
+            if record.timesheet_product_id:
+                return record.timesheet_product_id
+            if record.scaffold_id:
+                if record.task_type == 'assembly' and record.scaffold_id.assembly_prod_id:
+                    return record.scaffold_id.assembly_prod_id
+                elif record.task_type == 'disassembly' and record.scaffold_id.disassembly_prod_id:
+                    return record.scaffold_id.disassembly_prod_id
+                elif record.task_type == 'renting' and record.scaffold_id.renting_prod_id:
+                    return record.scaffold_id.renting_prod_id
+        return self.env.ref('sale_timesheet.time_product', False)
+
     timesheet_product_id = fields.Many2one(
+        'product.product', string='Timesheet Product',
+        related='',
         domain="""[
             ('type', '=', 'service')
         ]""",
+        readonly=False,
+        default=lambda self: self.default_timesheet_product_id()
     )
+
     worksheet_line_size = fields.Integer()
     hide_create_renting_subtask_button = fields.Boolean(compute="_compute_hide_renting")
 
