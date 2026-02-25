@@ -96,9 +96,10 @@
         <table class="tableAll boldBorder">
 
     <tr>
-    <td class="boldBorder center boldText padding" rowspan="5"> <br/>  <img t-attf-src="data:image/*;base64,{{doc.user_id.company_id.logo}}" width="150" /></td>
+        <td class="boldBorder center boldText" rowspan="5">
+            <img t-attf-src="data:image/*;base64,{{doc.user_id.company_id.logo}}" width="200" />
+        </td>
         <td class="boldBorder boldText center" colspan="6">CONTROL PARTE DIARIO DE TRABAJO</td>
-
     </tr>
     <tr>
         <td class="boldBorder boldText" style="padding-left: 5px;" colspan="1">Parte Nº:</td>

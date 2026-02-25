@@ -11,7 +11,7 @@
                 <field name="price_subtotal" widget="monetary"/>
             </xpath>
             <xpath expr="//field[@name='material_ids']//list//field[@name='quantity']" position="before">
-                <field name="task_id" invisible="1"/>
+                <field name="task_id" column_invisible="1"/>
                 <field name="subtask_id" domain="[('parent_id','=', task_id),('task_type', '!=', 'partial')]"/>
             </xpath>
             <xpath expr="//field[@name='material_ids']" position="after">

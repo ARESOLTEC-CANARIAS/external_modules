@@ -12,7 +12,7 @@
                 <field name="scaffold_id"/>
             </xpath>
             <xpath expr="//field[@name='cubic_meters_tasks']" position="attributes">
-                <attribute name="domain">[('project_id','=',context.get('project_ref_id', project_id)), ('scaffold_id', '=', context.get('scaffold_ref_id', scaffold_id)), ('id', 'not in', cubic_meters_tasks), ('is_parent', '=', False),('facture_in_partial', '=', False)]</attribute>
+                <attribute name="domain">[('project_id','=',context.get('project_ref_id', project_id)), ('scaffold_id', '=', context.get('scaffold_ref_id', scaffold_id)), ('id', 'not in', cubic_meters_tasks), ('facture_in_partial', '=', False)]</attribute>
             </xpath>
         </field>
     </record>
