@@ -314,6 +314,7 @@ class Andamios(models.Model):
                 'default_partner_id': self.client_id.id,
                 'default_boolean_task': True,
                 'scaffold_ref_id': self.id,
+                'default_project_id': self.task_id.project_id.id,
                 'project_ref_id': self.task_id.project_id.id
             }
         }

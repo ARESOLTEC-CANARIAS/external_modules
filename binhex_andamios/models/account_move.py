@@ -188,7 +188,7 @@ class AndamiosAccountMove(models.Model):
 class AndamiosSalesOrderLine(models.Model):
     _inherit = "account.move.line"
 
-    rental = fields.Boolean()
+    rental = fields.Boolean(default=False)
     task_id = fields.Many2one("project.task", ondelete="restrict", string="Task")
     number_of_days = fields.Float(readonly=True, string='Number of days')
     rental_qty = fields.Float(string='Cubic Meters')

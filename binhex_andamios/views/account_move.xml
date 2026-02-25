@@ -2,7 +2,7 @@
     <record id="binhex_account_move_scaffold" model="ir.ui.view">
         <field name="name">binhex.account.move.scaffold</field>
         <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="inherit_id" ref="account_payment_partner.view_move_form"/>
         <field name="arch" type="xml">
 		      <xpath expr="//page[@id='invoice_tab']" position="before">
             <page string="Tasks" name="tasks" invisible="boolean_task == False">

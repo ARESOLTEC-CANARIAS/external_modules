@@ -33,18 +33,18 @@
                     <attribute name="decoration-danger">state == 'sale' and rental == True and (rental_qty_delivered &lt; rental_qty or user_value_delivered &lt; user_value) </attribute>
                 </xpath>
                 <xpath expr="//list/field[@name='product_id']" position="after">
-                    <field name="rental" invisible="1"/>
-                    <field name="rental_qty" invisible="1"/>
-                    <field name="rental_qty_delivered" invisible="1"/>
-                    <field name="order_partner_id" invisible="1"/>
+                    <field name="rental" column_invisible="1"/>
+                    <field name="rental_qty" column_invisible="1"/>
+                    <field name="rental_qty_delivered" column_invisible="1"/>
+                    <field name="order_partner_id" column_invisible=""/>
                     <field name="scaffold_id" context="{'partner_id':order_partner_id}"/>
                 </xpath>
                 <xpath expr="//list/field[@name='product_uom_qty']" position="replace">
-                    <field name="product_uom_qty" invisible="1"/>
+                    <field name="product_uom_qty" column_invisible="1"/>
                     <field name="user_value"/>
                 </xpath>
                 <xpath expr="//list/field[@name='qty_delivered']" position="replace">
-                    <field name="qty_delivered" invisible="1"/>
+                    <field name="qty_delivered" column_invisible="1"/>
                     <field name="user_value_delivered"/>
                 </xpath>
 
@@ -101,10 +101,10 @@
                     <field name="must_have_dates" invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='order_line']/list/field[@name='name']" position="after">
-                    <field name="start_date" invisible="1"/>
-                    <field name="end_date" invisible="1"/>
-                    <field name="number_of_days" invisible="1"/>
-                    <field name="must_have_dates" invisible="1"/>
+                    <field name="start_date" column_invisible="1"/>
+                    <field name="end_date" column_invisible="1"/>
+                    <field name="number_of_days" column_invisible="1"/>
+                    <field name="must_have_dates" column_invisible="1"/>
                 </xpath>
                 <field name="payment_term_id" position="after">
                     <field name="default_start_date"/>
@@ -116,14 +116,16 @@
         <record id="view_order_form" model="ir.ui.view">
             <field name="name">sale_rental.view_order_form</field>
             <field name="model">sale.order</field>
-            <field name="inherit_id" ref="sale_rental.view_order_form"/>
+            <field name="inherit_id" ref="sale_rental.sale_rental_view_order_form"/>
             <field name="arch" type="xml">
-                <field name="rental_qty" position="after">
+                <xpath expr="//field[@name='order_line']/form//field[@name='start_date']" position="after">
+                    <field name="rental" invisible="1"/>
+                    <field name="rental_qty" invisible="not rental"/>
                     <field
                             name="rental_qty_delivered"
-                            invisible="rental == False"
+                            invisible="not rental"
                         />
-                </field>
+                </xpath>
             </field>
         </record>
     </data>

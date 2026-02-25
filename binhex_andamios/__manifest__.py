@@ -24,7 +24,8 @@
                 'hr_timesheet',
                 'sale_start_end_dates',
                 'sale_rental',
-                'sale_layout_category_hide_detail'
+                'sale_layout_category_hide_detail',
+                'account_payment_partner',
                 ],
 
     # always loaded

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 10:36+0000\n"
-"PO-Revision-Date: 2026-02-03 10:36+0000\n"
+"POT-Creation-Date: 2026-02-24 13:49+0000\n"
+"PO-Revision-Date: 2026-02-24 13:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -957,17 +957,6 @@ msgstr "Lista de andamios"
 #: model:ir.model.fields,field_description:binhex_andamios.field_scaffold_zone__sequence
 msgid "Sequence"
 msgstr "Secuencia"
-
-#. module: binhex_andamios
-#: model:ir.model.fields,help:binhex_andamios.field_project_task__timesheet_product_id
-msgid ""
-"Service that will be used by default when invoicing the time spent on a "
-"task. It can be modified on each task individually by selecting a specific "
-"sales order item."
-msgstr ""
-"Servicio que se utilizará por defecto al facturar el tiempo dedicado a una "
-"tarea. Se puede modificar en cada tarea individualmente seleccionando un "
-"elemento de pedido de venta específico."
 
 #. module: binhex_andamios
 #: model:ir.model.fields,field_description:binhex_andamios.field_account_bank_statement_line__boolean_task
