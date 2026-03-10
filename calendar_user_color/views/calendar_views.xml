@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="color_view_calendar_event_calendar" model="ir.ui.view">
+        <field name="model">calendar.event</field>
+        <field name="name">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar" />
+        <field name="arch" type="xml">
+            <calendar position="attributes">
+                <attribute name="color">color</attribute>
+            </calendar>
+            <xpath expr="//calendar" position="inside">
+            <field name="user_id" color="color" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
