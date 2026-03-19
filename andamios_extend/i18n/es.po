@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-24 13:47+0000\n"
-"PO-Revision-Date: 2026-02-24 13:47+0000\n"
+"POT-Creation-Date: 2026-03-18 14:04+0000\n"
+"PO-Revision-Date: 2026-03-18 14:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -778,8 +778,26 @@ msgstr "Tareas"
 #. module: andamios_extend
 #. odoo-python
 #: code:addons/andamios_extend/models/account_move.py:0
+msgid ""
+"The product %s of the task %s of the project %s doesn't have an income "
+"account"
+msgstr ""
+"El producto %s de la tarea %s del proyecto %s no tiene una cuenta de ingresos"
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
 msgid "The service "
-msgstr "El servicio"
+msgstr "El servicio "
+
+#. module: andamios_extend
+#. odoo-python
+#: code:addons/andamios_extend/models/account_move.py:0
+msgid ""
+"The service %s of the task %s of the project %s doesn't have an income "
+"account"
+msgstr ""
+"El servicio %s de la tarea %s del proyecto %s no tiene una cuenta de ingresos"
 
 #. module: andamios_extend
 #. odoo-python

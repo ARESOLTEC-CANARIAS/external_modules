@@ -12,6 +12,9 @@ class AccountMove(models.Model):
     contact_name = fields.Many2one(comodel_name="res.partner", string='Contact name')
     scaffold_id = fields.Many2one(comodel_name="scaffold.scaffold", string='Scaffold')
 
+    def _error_no_account(self, task, product):
+        raise UserError(_("The product %s of the task %s of the project %s doesn't have an income account") % (product.name, task.name, task.project_id.name))
+
     def _create_operator_hours(self, task, record):
         if task.task_type not in ['renting']:
             prod_normal_hour = self.env.ref('andamios_extend.binhex_normal_hour_operator', False)
@@ -36,6 +39,9 @@ class AccountMove(models.Model):
                             })
                             self.env.cr.commit()
                         else:
+                            if not prod_normal_hour.property_account_income_id:
+                                self._error_no_account(task, prod_normal_hour)
+
                             record.invoice_line_ids = [(0, 0, {
                                 'currency_id' : self.env.user.company_id.currency_id.id,
                                 'move_id': record.id,
@@ -73,6 +79,9 @@ class AccountMove(models.Model):
                             })
                             self.env.cr.commit()
                         else:
+                            if not prod_extra_hour.property_account_income_id:
+                                self._error_no_account(task, prod_extra_hour)
+
                             record.invoice_line_ids = [(0, 0, {
                                 'currency_id' : self.env.user.company_id.currency_id.id,
                                 'move_id': record.id,
@@ -93,6 +102,9 @@ class AccountMove(models.Model):
     def _create_materials_lines(self, task, record):
         for material_id in task.parent_id.material_ids:
             if material_id.subtask_id.id == task.id:
+                if not material_id.product_id.property_account_income_id:
+                    self._error_no_account(task, material_id.product_id)
+
                 record.invoice_line_ids = [(0, 0, {
                     'currency_id' : self.env.user.company_id.currency_id.id,
                     'move_id': record.id,
@@ -150,7 +162,12 @@ class AccountMove(models.Model):
                 qty = 0
 
             if qty > 0:
-                move_line = self.env['account.move.line'].with_context(check_move_validity=False).create({
+                account_id = product_id.property_account_income_id \
+                    or product_id.categ_id.property_account_income_categ_id
+                if not account_id:
+                    self._error_no_account(task, product_id)
+
+                self.env['account.move.line'].with_context(check_move_validity=False).create({
                     'currency_id': self.env.user.company_id.currency_id.id,
                     'move_id': record.id,
                     'product_id': product_id.id,
@@ -161,7 +178,7 @@ class AccountMove(models.Model):
                     'number_of_days': number_of_days,
                     'product_uom_id': product_id.uom_id.id,
                     'price_unit': price_,
-                    'account_id': product_id.property_account_income_id.id or product_id.categ_id.property_account_income_categ_id.id,
+                    'account_id': account_id.id,
                     'tax_ids': product_id.taxes_id.ids,
                     'start_date': start_date,
                     'end_date': end_date,
@@ -171,7 +188,6 @@ class AccountMove(models.Model):
                     },
                     'task_id': task.id,
                 })
-                record.invoice_line_ids = [(4, move_line.id)]
 
     @api.model
     def _create_move_lines(self, record=False):
@@ -189,14 +205,13 @@ class AccountMove(models.Model):
             if not record.invoice_line_ids.filtered(
                 lambda i : i.display_type == 'line_section' and i.name == task.name
             ):
-                move_line = self.env['account.move.line'].with_context(check_move_validity=False).create({
+                self.env['account.move.line'].with_context(check_move_validity=False).create({
                     'name': task.name,
                     'move_id': record.id,
                     'display_type': 'line_section',
                     'task_id': task.id,
                     'show_line_amount': False,
                 })
-                record.invoice_line_ids = [(4, move_line.id)]
             if record.move_type == "out_refund":
                 task.invoiced = False
 
