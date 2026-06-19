@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* servincom_pos_open_cash_drawer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-18 00:00+0000\n"
+"PO-Revision-Date: 2026-06-18 00:00+0000\n"
+"Last-Translator: SERVINCOM SOLUCIONES, S.L.\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: servincom_pos_open_cash_drawer
+#: model:ir.module.module,summary:servincom_pos_open_cash_drawer
+msgid "Open the configured POS cash drawer from the product screen"
+msgstr "Abre el cajón portamonedas configurado del TPV desde la pantalla de productos"
+
+#. module: servincom_pos_open_cash_drawer
+#. openerp-web
+#: code:addons/servincom_pos_open_cash_drawer/static/src/js/open_cash_drawer_button.js:0
+#: code:addons/servincom_pos_open_cash_drawer/static/src/xml/open_cash_drawer_button.xml:0
+#, python-format
+msgid "Open Cash Drawer"
+msgstr "Abrir cajón"
+
+#. module: servincom_pos_open_cash_drawer
+#. openerp-web
+#: code:addons/servincom_pos_open_cash_drawer/static/src/js/open_cash_drawer_button.js:0
+#, python-format
+msgid "Cash drawer unavailable"
+msgstr "Cajón no disponible"
+
+#. module: servincom_pos_open_cash_drawer
+#. openerp-web
+#: code:addons/servincom_pos_open_cash_drawer/static/src/js/open_cash_drawer_button.js:0
+#, python-format
+msgid "Connect and configure a cash drawer before using this button."
+msgstr "Conecta y configura un cajón portamonedas antes de usar este botón."

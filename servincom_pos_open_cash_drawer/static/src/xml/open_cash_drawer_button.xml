@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="servincom_pos_open_cash_drawer.OpenCashDrawerButton" owl="1">
+        <button class="control-button" t-on-click="onClick">
+            <i
+                class="fa fa-archive"
+                role="img"
+                aria-label="Open Cash Drawer"
+                title="Open Cash Drawer"
+            />
+            <span>Open Cash Drawer</span>
+        </button>
+    </t>
+</templates>
